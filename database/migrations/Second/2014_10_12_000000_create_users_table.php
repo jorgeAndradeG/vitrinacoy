@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('nombre');
-            $table->Integer('id_rubro')->unsigned();
+            $table->string('name');
+            $table->Integer('id_rubro')->unsigned()->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -29,8 +29,8 @@ return new class extends Migration
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('tiktok')->nullable();
-            $table->Integer('estado');
-            $table->Integer('es_admin');
+            $table->Integer('estado')->default('1');
+            $table->Integer('es_admin')->default('0');
             $table->foreign('id_rubro')->references('id')->on('rubro')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
