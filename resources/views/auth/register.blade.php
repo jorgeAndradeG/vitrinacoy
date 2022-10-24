@@ -19,6 +19,7 @@
               
                 @csrf 
                 
+                
                 <div class="form-floating mb-3">
                         <label for="nombre">Nombre Mype (*)</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="">
