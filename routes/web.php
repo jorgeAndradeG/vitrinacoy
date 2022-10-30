@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,7 @@ Route::get('/dashboard', function () {
 Route::get('/registro', function (){
     return view('usuario.register');
 });
+Route::resource('/productos', ProductosController::class);
+Route::post("/productos/eliminar", [ProductosController::class, 'eliminar']);
 
 require __DIR__.'/auth.php';

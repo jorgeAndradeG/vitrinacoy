@@ -314,7 +314,7 @@ return [
         ],
         [
             'text' => 'Productos',
-            'url'  => 'admin/settings',
+            'url'  => 'mypes.productos',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
