@@ -154,7 +154,11 @@ class ProductosController extends Controller
     }
     public function eliminar(Request $request)
     {
-        $producto = Producto::destroy($request['modalid']);
+        $producto = Producto::findOrFail($request['modalid']);
+        if($producto->estado == 1){
+            $producto->estado = 0;
+        }
+        $producto->save();
         return redirect('/productos');
     }
 }

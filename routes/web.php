@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductosController;
 
 /*
@@ -27,5 +28,8 @@ Route::get('/registro', function (){
 });
 Route::resource('/productos', ProductosController::class);
 Route::post("/productos/eliminar", [ProductosController::class, 'eliminar']);
+
+Route::resource('/mypes', AdminController::class);
+Route::post("/mypes/deshabilitar", [AdminController::class, 'deshabilitar']);
 
 require __DIR__.'/auth.php';
