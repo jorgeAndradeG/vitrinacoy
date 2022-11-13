@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,8 @@ use App\Http\Controllers\ProductosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', InicioController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
