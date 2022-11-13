@@ -16,7 +16,7 @@
                                 @if($mypes)
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="item">
-                                        <img src="{{ URL::asset('images/popular-01.jpg') }}" alt="">
+                                        <img src="{{ $mype->foto }}" alt="">
                                         <h4>{{$mype->name}}<br><span>{{$mype->descripcion}}</span></h4>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 @if($mypes)
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="item">
-                                        <img src="{{ URL::asset('images/popular-01.jpg') }}" alt="">
+                                        <img src="{{ $producto->foto }}" alt="">
                                         <h4>{{$producto->nombre}}<br><span>{{$producto->descripcion}}</span></h4>
                                     </div>
                                 </div>

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use Intervention\Image\Facades\Image;
 
 class RegisteredUserController extends Controller
 {
@@ -39,15 +40,17 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'file' => 'required',
         ]);
-        /* 
+
+        $path_image = "";
+        
         if(isset($request['file'])){
             $file = $request['file'];
             $nombre = $file->getClientOriginalName();
             $formato = explode(".",$nombre);
             $formato = end($formato);
 
-            $categorias = Categoria::all();
             if (strtolower($formato) != "jpg" && strtolower($formato) != "jpeg" && strtolower($formato) != "png" )
             {
                
@@ -57,10 +60,10 @@ class RegisteredUserController extends Controller
             
                 $fecha = getdate();
                 $fechaimg = strval($fecha["year"]) . strval($fecha["mon"]) . strval($fecha["mday"]) . strval($fecha["hours"]) . strval($fecha["minutes"]) . strval($fecha["seconds"]) . "_";
-
-                Image::make($file)->resize(600,400)->save('img/' . $fechaimg . $nombre);
+                $path_image = 'images/' . $fechaimg . $nombre;
+                Image::make($file)->resize(600,400)->save($path_image);
             };
-        }*/
+        }
         
 
         $user = User::create([
@@ -72,7 +75,7 @@ class RegisteredUserController extends Controller
             'descripcion' => $request->descripcion, 
             'telefono'=> $request->telefono,
             'direccion'=> $request->direccion,
-            'foto'=> $request->foto, 
+            'foto'=> $path_image, 
             'whatsapp_business'=>$request->whatsapp_business,
             'sitio_web'=>$request->sitio_web,
             'instagram'=>$request->instagram,

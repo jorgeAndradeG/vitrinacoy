@@ -40,8 +40,19 @@
                             <li><a href="index.html" class="active">Inicio</a></li>
                             <li><a href="browse.html">Emprendimientos</a></li>
                             <li><a href="details.html">Productos</a></li>
-                            <li><a href="profile.html">Profile</a></li>
                             <li><a href="profile.html">Beneficios</a></li>
+                            @if (Route::has('login'))
+                            <li></li>
+                            @auth
+                            <li><a href="{{ url('/dashboard') }}">Mi Perfil</a></li>
+                            @else
+                            <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
+                            @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}">Registrarse</a></li>
+                            @endif
+                            @endauth
+
+                            @endif
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -62,11 +73,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
-
-                        <br>Design: <a href="https://templatemo.com" target="_blank"
-                            title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com"
-                            target="_blank">ThemeWagon</a>
+                    <p>Copyright © 2022 <a href="/">Vitrina Coyhaique</a>
+                        <br>Coyhaique, Chile
                     </p>
                 </div>
             </div>

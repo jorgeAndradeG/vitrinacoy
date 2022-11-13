@@ -17,7 +17,7 @@ class ProductosController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $productos = Producto::Where('id_mype', $user->id)->get();
+        $productos = Producto::Where('id_mype', $user->id)->where('estado',1)->get();
         return view ('mypes.productos', compact('productos')); 
         //
     }
@@ -46,6 +46,8 @@ class ProductosController extends Controller
             'descripcion' => 'required|string|max:255',
         ]);
         
+        $path_image = "";
+
         if(isset($request['file'])){
             $file = $request['file'];//RESCATAMOS LA IMAGEN DEL FORMULARIO
             $nombre = $file->getClientOriginalName();
@@ -62,8 +64,8 @@ class ProductosController extends Controller
             
                 $fecha = getdate();
                 $fechaimg = strval($fecha["year"]) . strval($fecha["mon"]) . strval($fecha["mday"]) . strval($fecha["hours"]) . strval($fecha["minutes"]) . strval($fecha["seconds"]) . "_";
-
-                Image::make($file)->resize(600,400)->save('img/' . $fechaimg . $nombre);
+                $path_image = 'images/' . $fechaimg . $nombre;
+                Image::make($file)->resize(600,400)->save($path_image);
             };
         }
 
@@ -78,7 +80,7 @@ class ProductosController extends Controller
             'nombre'=> $request->nombre,
             'descripcion'=>$request->nombre,
             'estado'=>$estado,
-            'foto'=> $request->file,
+            'foto'=> $path_image,
             'id_mype'=>$user->id,
             
         ]);
