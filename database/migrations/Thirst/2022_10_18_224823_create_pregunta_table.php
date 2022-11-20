@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('pregunta', function (Blueprint $table) {
             $table->Increments('id');
             $table->Integer('id_mype')->unsigned();
-            $table->Integer('id_superadmin')->unsigned();
+            $table->Integer('id_superadmin')->unsigned()->nullable();
             $table->longText('pregunta');
-            $table->longText('respuesta');
+            $table->longText('respuesta')->nullable();
             $table->Integer('estado');
             $table->foreign('id_mype')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_superadmin')->references('id')->on('users')->onDelete('cascade');

@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\PreguntaController;
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\AdminSoporteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +35,11 @@ Route::post("/productos/eliminar", [ProductosController::class, 'eliminar']);
 
 Route::resource('/mypes', AdminController::class);
 Route::post("/mypes/deshabilitar", [AdminController::class, 'deshabilitar']);
+
+Route::resource('/pregunta', PreguntaController::class);
+
+Route::resource('/listapreguntas', AdminSoporteController::class);
+
+Route::resource('/perfil', PerfilController::class);
 
 require __DIR__.'/auth.php';

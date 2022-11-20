@@ -12,6 +12,7 @@
                                 <h4><em>Descubre Emprendimientos</em> 👀</h4>
                             </div>
                             <div class="row">
+                               
                                 @foreach($mypes as $mype)
                                 @if($mypes)
                                 <div class="col-lg-3 col-sm-6">
@@ -25,6 +26,7 @@
                                 </div>
                                 @endif
                                 @endforeach
+                               
                             </div>
                         </div>
                     </div>
