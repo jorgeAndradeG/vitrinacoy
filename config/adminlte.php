@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -309,7 +309,7 @@ return [
         ['header' => 'Perfil'],
         [
             'text' => 'Datos',
-            'url'  => 'admin/settings',
+            'url'  => '/perfil',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -319,7 +319,7 @@ return [
         ],
         [
             'text' => 'Consultas',
-            'url'  => 'admin/questions',
+            'url'  => '/pregunta',
             'icon' => 'fas fa-headset',
         ],
     ],

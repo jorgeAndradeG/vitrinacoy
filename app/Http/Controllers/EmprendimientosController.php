@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pregunta;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PreguntaController extends Controller
+class EmprendimientosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        return view('mypes.crear-pregunta');
+        $mypes = User::Where('estado',1)->where('es_admin',0)->inRandomOrder()->get();
+        return view('vistas.emprendimientos', compact('mypes')); 
         //
     }
 

@@ -10,11 +10,9 @@
 
 
 @section('content')
-    <div class="container">
+    <div class="container overflow-auto">
         <div class="row align-items-start">
             <div class="col-12">
-
-            
                 <h3 style="text-align:center;">Datos de Perfil
                 <button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="right" title=" Editar Perfil " onclick=editarPerfil()><i class="far fa-edit"></i></button></h3>
                 <br>
@@ -27,9 +25,6 @@
                         </ul>
                     </div>
                 @endif
-
-
-                
                 <form method="POST" action="{{action('App\Http\Controllers\PerfilController@update',$usuario->id)}}" enctype="multipart/form-data"> 
 
                     @csrf 
@@ -134,7 +129,7 @@
             document.getElementById("tiktok").disabled = false;
             document.getElementById("sitio_web").disabled = false;
             document.getElementById("whatsapp_business").disabled = false;
-            document.getElementById("foto").disabled = false;
+            document.getElementById("imagen").disabled = false;
             document.getElementById("botonEditar").disabled = false;
 
         }
@@ -147,7 +142,7 @@
             document.getElementById("tiktok").disabled = true;
             document.getElementById("sitio_web").disabled = true;
             document.getElementById("whatsapp_business").disabled = true;
-            document.getElementById("foto").disabled = true;
+            document.getElementById("imagen").disabled = true;
             document.getElementById("botonEditar").disabled = true;
 
         }

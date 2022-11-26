@@ -31,20 +31,20 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="/" class="logo">
                             <img src="{{ URL::asset('images/logo.png') }}" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Inicio</a></li>
-                            <li><a href="browse.html">Emprendimientos</a></li>
-                            <li><a href="details.html">Productos</a></li>
-                            <li><a href="profile.html">Beneficios</a></li>
+                            <li><a href="/" class="active">Inicio</a></li>
+                            <li><a href="/emprendimientos">Emprendimientos</a></li>
+                            <!-- <li><a href="details.html">Productos</a></li> -->
+                            <!-- <li><a href="profile.html">Beneficios</a></li> -->
                             @if (Route::has('login'))
                             <li></li>
                             @auth
-                            <li><a href="{{ url('/dashboard') }}">Mi Perfil</a></li>
+                            <li><a href="{{ url('/perfil') }}">Mi Perfil</a></li>
                             @else
                             <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
                             @if (Route::has('register'))

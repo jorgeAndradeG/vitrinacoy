@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class PerfilController extends Controller
 {
@@ -75,19 +79,48 @@ class PerfilController extends Controller
         $request->validate([
             'name'=> 'required|string|max:255',
         ]);
+
+        $path_image = "";
+
+        if(isset($request['file'])){
+            $file = $request['file'];//RESCATAMOS LA IMAGEN DEL FORMULARIO
+            $nombre = $file->getClientOriginalName();
+            $formato = explode(".",$nombre);
+            $formato = end($formato);
+
+            if (strtolower($formato) != "jpg" && strtolower($formato) != "jpeg" && strtolower($formato) != "png" )
+            {
+                //CUANDO NO ES IMAGEN
+                $user = Auth::user(); //OBTENEMOS AL USUARIO QUE ESTÁ LOGGEADO.
+                return view('mypes.edit-producto')->with(['msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)']); 
+            } else if(strtolower($formato) == "jpg" || strtolower($formato) == "jpeg" || strtolower($formato) == "png") 
+            {
+            
+                $fecha = getdate();
+                $fechaimg = strval($fecha["year"]) . strval($fecha["mon"]) . strval($fecha["mday"]) . strval($fecha["hours"]) . strval($fecha["minutes"]) . strval($fecha["seconds"]) . "_";
+                $path_image = 'images/' . $fechaimg . $nombre;
+                Image::make($file)->resize(600,400)->save($path_image);
+            };
+        }
+
         $usuario->name = $request->name; 
         $usuario->descripcion = $request['descripcion'];        
-        $usuario->descripcion = $request['telefono'];        
-        $usuario->descripcion = $request['direccion'];       
-        $usuario->descripcion = $request['whatsapp_business'];        
-        $usuario->descripcion = $request['sitio_web'];
-        $usuario->descripcion = $request['instagram'];
-        $usuario->descripcion = $request['facebook'];
-        $usuario->descripcion = $request['tiktok'];
+        $usuario->telefono = $request['telefono'];        
+        $usuario->direccion = $request['direccion'];       
+        $usuario->whatsapp_business = $request['whatsapp_business'];        
+        $usuario->sitio_web = $request['sitio_web'];
+        $usuario->instagram = $request['instagram'];
+        $usuario->facebook = $request['facebook'];
+        $usuario->tiktok = $request['tiktok'];
+        if($path_image != ""){
+            $usuario->foto = $path_image;
+        }
+
       
 
 
         $usuario->save();
+        return redirect('/perfil');
                 //
     }
     

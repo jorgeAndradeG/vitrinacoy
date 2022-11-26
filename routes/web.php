@@ -7,6 +7,7 @@ use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\AdminSoporteController;
+use App\Http\Controllers\EmprendimientosController;
 
 
 /*
@@ -41,5 +42,8 @@ Route::resource('/pregunta', PreguntaController::class);
 Route::resource('/listapreguntas', AdminSoporteController::class);
 
 Route::resource('/perfil', PerfilController::class);
+
+Route::resource('/emprendimientos', EmprendimientosController::class);
+
 
 require __DIR__.'/auth.php';
