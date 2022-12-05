@@ -132,12 +132,33 @@ class ProductosController extends Controller
         }else{
             $estado = 0;
         }
+        $path_image = "";
+        
+        if(isset($request['file'])){
+            $file = $request['file'];
+            $nombre = $file->getClientOriginalName();
+            $formato = explode(".",$nombre);
+            $formato = end($formato);
+
+            if (strtolower($formato) != "jpg" && strtolower($formato) != "jpeg" && strtolower($formato) != "png" )
+            {
+               
+                return view('usuario.register')->with(['msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)']);
+            } else if(strtolower($formato) == "jpg" || strtolower($formato) == "jpeg" || strtolower($formato) == "png") 
+            {
+            
+                $fecha = getdate();
+                $fechaimg = strval($fecha["year"]) . strval($fecha["mon"]) . strval($fecha["mday"]) . strval($fecha["hours"]) . strval($fecha["minutes"]) . strval($fecha["seconds"]) . "_";
+                $path_image = 'images/' . $fechaimg . $nombre;
+                Image::make($file)->resize(600,400)->save($path_image);
+            };
+        }
 
         $producto = Producto::findOrFail($id);
         $producto->nombre = $request['nombre'];
         $producto->descripcion= $request['descripcion'];
         $producto->estado = $estado;
-        $producto->imagen = $request['imagen'];
+        $producto->foto = $path_image;
 
         $producto->save();
         return redirect("/productos");

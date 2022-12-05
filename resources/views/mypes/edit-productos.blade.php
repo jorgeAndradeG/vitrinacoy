@@ -25,8 +25,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <label for="descripcion">descripcion</label>
-                    <textarea name="descripcion" id="descripcion"
-                        class="form-control">{!! $producto->descripcion !!}</textarea>
+                    <input type="text" class="form-control" name="descripcion" id="descripcion" value="{{$producto->descripcion}}" required>
                 </div>
                 <div class="form-floating mb-3">
                     <label for="imagen">Imagen</label>

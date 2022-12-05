@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Pregunta;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class AdminSoporteController extends Controller
@@ -63,7 +64,9 @@ class AdminSoporteController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::findOrFail($id);
-        return view('administrador.ver-pregunta',)->with(["pregunta" => $pregunta]);
+        $user = User::Where('id_mype',$mype->id )->get();
+        
+        return view('administrador.ver-pregunta', compact('mypes'))->with(["pregunta" => $pregunta]);
         //
     }
 

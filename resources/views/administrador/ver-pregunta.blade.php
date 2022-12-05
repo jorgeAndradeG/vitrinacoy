@@ -12,18 +12,22 @@
             <div class="col-12">
                 <h3>Problema Número {{$pregunta->id}}</h3>
                 <br>
-                <p>{{$pregunta->pregunta}}</p>   
+                <input type="text" class="form-control" name="facebook" id="facebook" value="{{$pregunta->pregunta}}" disabled>  
             </div>
 
         </div>
                  <div class="row">
                     <div class="col-12">
-                    <p style="text-align:center;">Respuesta</p>
+                    <p style="text-align:center;"></p>
                          <label for="respuesta">Respuesta</label>  
-             
-                         <textarea name="respuesta" id="respuesta" cols="30" rows="5" class="form-control"></textarea>
+                        <textarea name="respuesta" id="respuesta" cols="30" rows="5" class="form-control"></textarea>
+                        <br>
                     </div>
-                    <button type="submit" class="btn btn-success">Enviar respuesta</button>
+                    <br>
+                    
+                    </div>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-success" style="text-align:center">Enviar respuesta</button>
                     </div>
 
                  </div>

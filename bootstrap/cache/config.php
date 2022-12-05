@@ -48,7 +48,7 @@
     'usermenu_profile_url' => false,
     'layout_topnav' => NULL,
     'layout_boxed' => NULL,
-    'layout_fixed_sidebar' => true,
+    'layout_fixed_sidebar' => NULL,
     'layout_fixed_navbar' => NULL,
     'layout_fixed_footer' => NULL,
     'layout_dark_mode' => NULL,
@@ -86,7 +86,7 @@
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -110,7 +110,7 @@
       2 => 
       array (
         'text' => 'Datos',
-        'url' => 'admin/settings',
+        'url' => '/perfil',
         'icon' => 'fas fa-fw fa-user',
       ),
       3 => 
@@ -122,7 +122,7 @@
       4 => 
       array (
         'text' => 'Consultas',
-        'url' => 'admin/questions',
+        'url' => '/pregunta',
         'icon' => 'fas fa-headset',
       ),
     ),
