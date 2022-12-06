@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use App\Models\User;
-use App\Models\Rubro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
-class InicioController extends Controller
+class ProductoDetalleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +19,7 @@ class InicioController extends Controller
      */
     public function index()
     {
-        $mypes = User::Where('estado',1)->where('es_admin',0)->inRandomOrder()->get();
-        $productos = Producto::Where('estado',1)->inRandomOrder()->get();
-        $categorias = Rubro::Where('estado',1)->inRandomOrder()->get();
-        return view('welcome', compact('mypes','productos','categorias')); 
+       
         //
     }
 
@@ -32,7 +30,6 @@ class InicioController extends Controller
      */
     public function create()
     {
-        return view('mypes.create-productos');
         //
     }
 
@@ -55,7 +52,8 @@ class InicioController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+        return view('vistas.producto')->with(['producto'=>$producto]);
     }
 
     /**
@@ -78,9 +76,9 @@ class InicioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -90,9 +88,5 @@ class InicioController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function eliminar(Request $request)
-    {
-       //
     }
 }

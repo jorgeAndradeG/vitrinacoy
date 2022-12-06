@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.js"
@@ -62,21 +63,21 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <label for="instagram">Instagram</label>
-                        <input type="text" class="form-control" name="instagram" id="instagram" value="{{$usuario->instagram}}" disabled>
+                        <label for="instagram">Instagram</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Solo el nombre de usuario"></i></small>
+                        <input type="text" class="form-control" name="instagram" id="instagram" value="{{$usuario->instagram}}" placeholder="nombre de usuario" disabled>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <label for="facebook">Facebook</label>
-                        <input type="text" class="form-control" name="facebook" id="facebook" value="{{$usuario->facebook}}" disabled>
+                    <div class="form-floating mb-3"> 
+                        <label for="facebook">Facebook</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Link completo"></i></small>
+                        <input type="text" class="form-control" name="facebook" id="facebook" value="{{$usuario->facebook}}" placeholder="www.facebook.com/nombre-de-usuario" disabled>
                     </div>
                     <div class="form-floating mb-3">
-                        <label for="tiktok">TikTok</label>
-                        <input type="text" class="form-control" name="tiktok" id="tiktok" value="{{$usuario->tiktok}}" disabled>
+                        <label for="tiktok">TikTok</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Solo el nombre de usuario"></i></small>
+                        <input type="text" class="form-control" name="tiktok" id="tiktok" value="{{$usuario->tiktok}}" placeholder="@nombre de usuario" disabled>
                     </div>
                     <div class="form-floating mb-3">
-                        <label for="sitio_web">Pagina Web</label>
-                        <input type="text" class="form-control" name="sitio_web" id="sitio_web" value="{{$usuario->sitio_web}}" disabled>
+                        <label for="sitio_web">Pagina Web</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Link completo"></i></small>
+                        <input type="text" class="form-control" name="sitio_web" id="sitio_web" value="{{$usuario->sitio_web}}" placeholder="www.tusitio.cl" disabled>
                     </div>
                     <div class="form-floating mb-3">
                         <label for="whatsapp_business">Whatsapp Business</label>

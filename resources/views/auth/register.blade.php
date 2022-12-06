@@ -5,7 +5,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="w-50 h-50 fill-current text-gray-500" />
             </a>
         </x-slot>
 
@@ -53,7 +53,7 @@
                             </select>
                         </div>
 
-                        <div class="form-floating mb-3">
+                        <!-- <div class="form-floating mb-3">
                             <label for="descripcion">Descripción</label>
                             <input type="text" class="form-control" name="descripcion" id="descripcion">
                         </div>
@@ -81,9 +81,9 @@
                         <div class="form-floating mb-3">
                             <label for="instagram">Instagram</label>
                             <input type="text" class="form-control" name="instagram" id="instagram">
-                        </div>
+                        </div> -->
 
-                        <div class="form-floating mb-3">
+                        <!-- <div class="form-floating mb-3">
                             <label for="facebook">Facebook</label>
                             <input type="text" class="form-control" name="facebook" id="facebook">
                         </div>
@@ -91,6 +91,21 @@
                         <div class="form-floating mb-3">
                             <label for="tiktok">TikTok</label>
                             <input type="text" class="form-control" name="tiktok" id="tiktok">
+                        </div> -->
+
+                        <div class="form-group{{ $errors->has('CaptchaCode') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Captcha</label>
+
+                            <div class="col-md-6">
+                                {!! captcha_image_html('ContactCaptcha') !!}
+                                <input class="form-control" type="text" id="CaptchaCode" name="CaptchaCode">
+
+                                @if ($errors->has('CaptchaCode'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('CaptchaCode') }}</strong>
+                                </span>
+                                @endif
+                            </div>
                         </div>
 
                         <hr>

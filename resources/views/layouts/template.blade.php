@@ -18,9 +18,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/templatemo-cyborg-gaming.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/owl.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.css" />
-
 </head>
 
 <body>
@@ -38,11 +37,11 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="/" class="active">Inicio</a></li>
-                            <li><a href="/emprendimientos">Emprendimientos</a></li>
-                            <!-- <li><a href="details.html">Productos</a></li> -->
+                            <!-- <li><a href="/emprendimientos">Emprendimientos</a></li>
+                            <li><a href="/listaproductos">Productos</a></li> -->
                             <!-- <li><a href="profile.html">Beneficios</a></li> -->
                             @if (Route::has('login'))
-                            <li></li>
+                            <!-- <li></li> -->
                             @auth
                             <li><a href="{{ url('/perfil') }}">Mi Perfil</a></li>
                             @else

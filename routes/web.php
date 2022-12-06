@@ -8,6 +8,9 @@ use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\AdminSoporteController;
 use App\Http\Controllers\EmprendimientosController;
+use App\Http\Controllers\PerfilMYPEController;
+use App\Http\Controllers\ListaProductosController;
+use App\Http\Controllers\ProductoDetalleController;
 
 
 /*
@@ -31,19 +34,24 @@ Route::get('/dashboard', function () {
 Route::get('/registro', function (){
     return view('usuario.register');
 });
-Route::resource('/productos', ProductosController::class);
-Route::post("/productos/eliminar", [ProductosController::class, 'eliminar']);
+Route::resource('/productos', ProductosController::class)->middleware('auth.basic');
+Route::post("/productos/eliminar", [ProductosController::class, 'eliminar'])->middleware('auth.basic');
 
-Route::resource('/mypes', AdminController::class);
-Route::post("/mypes/deshabilitar", [AdminController::class, 'deshabilitar']);
+Route::resource('/mypes', AdminController::class)->middleware('auth.basic');
+Route::post("/mypes/deshabilitar", [AdminController::class, 'deshabilitar'])->middleware('auth.basic');
 
-Route::resource('/pregunta', PreguntaController::class);
+Route::resource('/pregunta', PreguntaController::class)->middleware('auth.basic');
 
-Route::resource('/listapreguntas', AdminSoporteController::class);
+Route::resource('/listapreguntas', AdminSoporteController::class)->middleware('auth.basic');
 
-Route::resource('/perfil', PerfilController::class);
+Route::resource('/perfil', PerfilController::class)->middleware('auth.basic');
 
 Route::resource('/emprendimientos', EmprendimientosController::class);
 
+Route::resource('/producto', ProductoDetalleController::class);
+
+Route::resource('/listaproductos', ListaProductosController::class);
+
+Route::resource('/pyme', PerfilMYPEController::class);
 
 require __DIR__.'/auth.php';

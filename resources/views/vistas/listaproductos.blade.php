@@ -8,16 +8,16 @@
                 <div class="live-stream">
                     <div class="col-lg-12">
                         <div class="heading-section">
-                            <h4><em>Emprendimientos</em></h4>
+                            <h4><em>Productos</em></h4>
                         </div>
                     </div>
                     <div class="row">
-                        @foreach($mypes as $mype)
+                        @foreach($productos as $producto)
                         <div class="col-lg-3 col-sm-6">
                             <div class="item">
-                                <a href="{{action('App\Http\Controllers\PerfilMYPEController@show',$mype->id)}}">
+                                <a href="{{action('App\Http\Controllers\ProductoDetalleController@show',$producto->id)}}">
                                     <div class="thumb">
-                                        <img src="{{ $mype->foto }}" alt="">
+                                        <img src="{{ $producto->foto }}" alt="">
                                         <div class="hover-effect">
                                             <div class="content">
                                                 <!-- <div class="live">
@@ -34,7 +34,7 @@
                                         <!-- <div class="avatar">
                       <img src="assets/images/avatar-04.jpg" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
                     </div> -->
-                                        <span> {{ $mype->name }}</span>
+                                        <span> {{ $producto->nombre }}</span>
                                     </div>
                                 </a>
                             </div>

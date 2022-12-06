@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
-use App\Models\User;
-use App\Models\Rubro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
 
-class InicioController extends Controller
+class ListaProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +15,8 @@ class InicioController extends Controller
      */
     public function index()
     {
-        $mypes = User::Where('estado',1)->where('es_admin',0)->inRandomOrder()->get();
         $productos = Producto::Where('estado',1)->inRandomOrder()->get();
-        $categorias = Rubro::Where('estado',1)->inRandomOrder()->get();
-        return view('welcome', compact('mypes','productos','categorias')); 
+        return view('vistas.listaproductos', compact('productos')); 
         //
     }
 
@@ -32,7 +27,6 @@ class InicioController extends Controller
      */
     public function create()
     {
-        return view('mypes.create-productos');
         //
     }
 
@@ -44,7 +38,7 @@ class InicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
@@ -90,9 +84,5 @@ class InicioController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function eliminar(Request $request)
-    {
-       //
     }
 }

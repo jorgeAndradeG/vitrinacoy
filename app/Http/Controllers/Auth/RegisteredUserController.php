@@ -41,6 +41,7 @@ class RegisteredUserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
             'file' => 'required',
+            'CaptchaCode' => 'required|valid_captcha',
         ]);
 
         $path_image = "";
@@ -72,15 +73,15 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'estado' => 1,
             'id_rubro' => $request->rubro,
-            'descripcion' => $request->descripcion, 
-            'telefono'=> $request->telefono,
-            'direccion'=> $request->direccion,
+            // 'descripcion' => $request->descripcion, 
+            // 'telefono'=> $request->telefono,
+            // 'direccion'=> $request->direccion,
             'foto'=> $path_image, 
-            'whatsapp_business'=>$request->whatsapp_business,
-            'sitio_web'=>$request->sitio_web,
-            'instagram'=>$request->instagram,
-            'facebook'=>$request->facebook,
-            'tiktok'=>$request->tiktok,
+            // 'whatsapp_business'=>$request->whatsapp_business,
+            // 'sitio_web'=>$request->sitio_web,
+            // 'instagram'=>$request->instagram,
+            // 'facebook'=>$request->facebook,
+            // 'tiktok'=>$request->tiktok,
             'es_admin' => 0,
 
         ]);
@@ -89,6 +90,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/perfil');
     }
 }

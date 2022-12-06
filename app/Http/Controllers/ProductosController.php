@@ -78,7 +78,7 @@ class ProductosController extends Controller
 
         $productoCreado = Producto::create([
             'nombre'=> $request->nombre,
-            'descripcion'=>$request->nombre,
+            'descripcion'=>$request->descripcion,
             'estado'=>$estado,
             'foto'=> $path_image,
             'id_mype'=>$user->id,
@@ -158,7 +158,9 @@ class ProductosController extends Controller
         $producto->nombre = $request['nombre'];
         $producto->descripcion= $request['descripcion'];
         $producto->estado = $estado;
-        $producto->foto = $path_image;
+        if($path_image != ""){
+            $producto->foto = $path_image;
+        }
 
         $producto->save();
         return redirect("/productos");
