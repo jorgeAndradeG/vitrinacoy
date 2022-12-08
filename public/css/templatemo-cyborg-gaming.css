@@ -1707,7 +1707,8 @@ body {
     text-align: left;
   }
   .featured-games {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    margin-top: 60px;
   }
   .start-stream .item {
     margin: 15px 0px;

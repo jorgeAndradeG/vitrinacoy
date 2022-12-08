@@ -121,7 +121,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Jg1XTIEXF97PkSjF',
+            '_route' => 'generated::UHDnfXczAsE35GWl',
           ),
           1 => NULL,
           2 => 
@@ -141,7 +141,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UulVHYCBIDt9Vgba',
+            '_route' => 'generated::odzYrkGneMrrmRqu',
           ),
           1 => NULL,
           2 => 
@@ -161,13 +161,72 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::JoTQo5E5DH5zPJFj',
+            '_route' => 'generated::Arxccwo9wrxYC11Y',
           ),
           1 => NULL,
           2 => 
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/beneficios' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::exA5GAYaAy5f3AsQ',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/entidad_beneficios' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::njb2qHdjYobBICfE',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/login' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::QNIG3DBds0NskR2k',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -330,7 +389,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Sg418pmewW1uYQWL',
+            '_route' => 'generated::DjNsTcVWlIbbNQhL',
           ),
           1 => NULL,
           2 => 
@@ -848,6 +907,62 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/beneficios' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/beneficios/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/register' => 
       array (
         0 => 
@@ -871,7 +986,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yPAMeO7iAQfZ6Ksa',
+            '_route' => 'generated::q1T1lS6VLRkOaZ0u',
           ),
           1 => NULL,
           2 => 
@@ -907,7 +1022,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::0yBjMxLUtBG6zWq4',
+            '_route' => 'generated::WAmJjLTQuWEktMhu',
           ),
           1 => NULL,
           2 => 
@@ -1037,7 +1152,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::rtzbFXYRE6o2L5bB',
+            '_route' => 'generated::CR2hIpSZcAwyZvFZ',
           ),
           1 => NULL,
           2 => 
@@ -1072,7 +1187,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/p(?|r(?|oducto(?|s/(?|([^/]++)(?|(*:41)|/edit(*:53)|(*:60))|eliminar(*:76))|/([^/]++)(?|(*:96)|/edit(*:108)|(*:116)))|egunta/([^/]++)(?|(*:144)|/edit(*:157)|(*:165)))|erfil/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|yme/([^/]++)(?|(*:237)|/edit(*:250)|(*:258)))|/mypes/(?|([^/]++)(?|(*:289)|/edit(*:302)|(*:310))|deshabilitar(*:331))|/listapr(?|eguntas/([^/]++)(?|(*:370)|/edit(*:383)|(*:391))|oductos/([^/]++)(?|(*:419)|/edit(*:432)|(*:440)))|/emprendimientos/([^/]++)(?|(*:478)|/edit(*:491)|(*:499))|/reset\\-password/([^/]++)(*:533)|/verify\\-email/([^/]++)/([^/]++)(*:573))/?$}sDu',
+      0 => '{^(?|/p(?|r(?|oducto(?|s/(?|([^/]++)(?|(*:41)|/edit(*:53)|(*:60))|eliminar(*:76))|/([^/]++)(?|(*:96)|/edit(*:108)|(*:116)))|egunta/([^/]++)(?|(*:144)|/edit(*:157)|(*:165)))|erfil/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|yme/([^/]++)(?|(*:237)|/edit(*:250)|(*:258)))|/mypes/(?|([^/]++)(?|(*:289)|/edit(*:302)|(*:310))|deshabilitar(*:331))|/listapr(?|eguntas/([^/]++)(?|(*:370)|/edit(*:383)|(*:391))|oductos/([^/]++)(?|(*:419)|/edit(*:432)|(*:440)))|/emprendimientos/([^/]++)(?|(*:478)|/edit(*:491)|(*:499))|/beneficios/(?|([^/]++)(?|(*:534)|/edit(*:547)|(*:555))|deshabilitar(*:576))|/reset\\-password/([^/]++)(*:610)|/verify\\-email/([^/]++)/([^/]++)(*:650))/?$}sDu',
     ),
     3 => 
     array (
@@ -1170,7 +1285,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::WGnGKNGLpr9Khl91',
+            '_route' => 'generated::2s0tacFca5FtPmEH',
           ),
           1 => 
           array (
@@ -1631,7 +1746,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ahHgwqtNbZCTroHS',
+            '_route' => 'generated::OvGk1arw62tkibne',
           ),
           1 => 
           array (
@@ -1910,7 +2025,116 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      533 => 
+      534 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.show',
+          ),
+          1 => 
+          array (
+            0 => 'beneficio',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      547 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.edit',
+          ),
+          1 => 
+          array (
+            0 => 'beneficio',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      555 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.update',
+          ),
+          1 => 
+          array (
+            0 => 'beneficio',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'beneficios.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'beneficio',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      576 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::KECO5lYcsnxgl2jN',
+          ),
+          1 => 
+          array (
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      610 => 
       array (
         0 => 
         array (
@@ -1933,7 +2157,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      573 => 
+      650 => 
       array (
         0 => 
         array (
@@ -2154,7 +2378,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Jg1XTIEXF97PkSjF' => 
+    'generated::UHDnfXczAsE35GWl' => 
     array (
       'methods' => 
       array (
@@ -2166,7 +2390,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'LaravelCaptcha\\Controllers\\CaptchaHandlerController@index',
         'controller' => 'LaravelCaptcha\\Controllers\\CaptchaHandlerController@index',
-        'as' => 'generated::Jg1XTIEXF97PkSjF',
+        'as' => 'generated::UHDnfXczAsE35GWl',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2182,7 +2406,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::UulVHYCBIDt9Vgba' => 
+    'generated::odzYrkGneMrrmRqu' => 
     array (
       'methods' => 
       array (
@@ -2194,7 +2418,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'LaravelCaptcha\\Controllers\\SimpleCaptchaHandlerController@index',
         'controller' => 'LaravelCaptcha\\Controllers\\SimpleCaptchaHandlerController@index',
-        'as' => 'generated::UulVHYCBIDt9Vgba',
+        'as' => 'generated::odzYrkGneMrrmRqu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2210,7 +2434,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::JoTQo5E5DH5zPJFj' => 
+    'generated::Arxccwo9wrxYC11Y' => 
     array (
       'methods' => 
       array (
@@ -2233,7 +2457,117 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::JoTQo5E5DH5zPJFj',
+        'as' => 'generated::Arxccwo9wrxYC11Y',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::exA5GAYaAy5f3AsQ' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/beneficios',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ApiController@beneficios',
+        'controller' => 'App\\Http\\Controllers\\ApiController@beneficios',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::exA5GAYaAy5f3AsQ',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::njb2qHdjYobBICfE' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/entidad_beneficios',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ApiController@entidad_beneficios',
+        'controller' => 'App\\Http\\Controllers\\ApiController@entidad_beneficios',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::njb2qHdjYobBICfE',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::QNIG3DBds0NskR2k' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ApiController@login',
+        'controller' => 'App\\Http\\Controllers\\ApiController@login',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::QNIG3DBds0NskR2k',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2524,7 +2858,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:264:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:46:"function () {
     return \\view(\'dashboard\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000039e0000000000000000";}";s:4:"hash";s:44:"ZYH74wMXhAb4he2uNgkt7POqdxQD/cFHSLpej2nM2jo=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000003a10000000000000000";}";s:4:"hash";s:44:"lMLbHDVCdY+VRwIt7uWaQ2hLZ21tV/Tl0MFSYHsUjmg=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -2546,7 +2880,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Sg418pmewW1uYQWL' => 
+    'generated::DjNsTcVWlIbbNQhL' => 
     array (
       'methods' => 
       array (
@@ -2562,13 +2896,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:270:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:52:"function (){
     return \\view(\'usuario.register\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000039f0000000000000000";}";s:4:"hash";s:44:"vGtvvEDS7jNqwOqUEiqPERRT0Ww01qA5sRNaUmI3PGU=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000003a20000000000000000";}";s:4:"hash";s:44:"Nuy0BBpKeczHl3vstDzp+8mZ2c7pbebPL63+r38MULE=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::Sg418pmewW1uYQWL',
+        'as' => 'generated::DjNsTcVWlIbbNQhL',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2848,7 +3182,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::WGnGKNGLpr9Khl91' => 
+    'generated::2s0tacFca5FtPmEH' => 
     array (
       'methods' => 
       array (
@@ -2869,7 +3203,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::WGnGKNGLpr9Khl91',
+        'as' => 'generated::2s0tacFca5FtPmEH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3149,7 +3483,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ahHgwqtNbZCTroHS' => 
+    'generated::OvGk1arw62tkibne' => 
     array (
       'methods' => 
       array (
@@ -3170,7 +3504,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ahHgwqtNbZCTroHS',
+        'as' => 'generated::OvGk1arw62tkibne',
       ),
       'fallback' => false,
       'defaults' => 
@@ -5006,6 +5340,307 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'beneficios.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'beneficios',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.index',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@index',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@index',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'beneficios.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'beneficios/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.create',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@create',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@create',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'beneficios.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'beneficios',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.store',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@store',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@store',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'beneficios.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'beneficios/{beneficio}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.show',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@show',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@show',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'beneficios.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'beneficios/{beneficio}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.edit',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@edit',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@edit',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'beneficios.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'beneficios/{beneficio}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.update',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@update',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@update',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'beneficios.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'beneficios/{beneficio}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'as' => 'beneficios.destroy',
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@destroy',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::KECO5lYcsnxgl2jN' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'beneficios/deshabilitar',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth.basic',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BeneficiosController@deshabilitar',
+        'controller' => 'App\\Http\\Controllers\\BeneficiosController@deshabilitar',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::KECO5lYcsnxgl2jN',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'register' => 
     array (
       'methods' => 
@@ -5044,7 +5679,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yPAMeO7iAQfZ6Ksa' => 
+    'generated::q1T1lS6VLRkOaZ0u' => 
     array (
       'methods' => 
       array (
@@ -5065,7 +5700,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yPAMeO7iAQfZ6Ksa',
+        'as' => 'generated::q1T1lS6VLRkOaZ0u',
       ),
       'fallback' => false,
       'defaults' => 
@@ -5119,7 +5754,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::0yBjMxLUtBG6zWq4' => 
+    'generated::WAmJjLTQuWEktMhu' => 
     array (
       'methods' => 
       array (
@@ -5140,7 +5775,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::0yBjMxLUtBG6zWq4',
+        'as' => 'generated::WAmJjLTQuWEktMhu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -5460,7 +6095,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::rtzbFXYRE6o2L5bB' => 
+    'generated::CR2hIpSZcAwyZvFZ' => 
     array (
       'methods' => 
       array (
@@ -5481,7 +6116,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::rtzbFXYRE6o2L5bB',
+        'as' => 'generated::CR2hIpSZcAwyZvFZ',
       ),
       'fallback' => false,
       'defaults' => 

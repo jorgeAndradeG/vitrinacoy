@@ -11,7 +11,9 @@ use App\Http\Controllers\EmprendimientosController;
 use App\Http\Controllers\PerfilMYPEController;
 use App\Http\Controllers\ListaProductosController;
 use App\Http\Controllers\ProductoDetalleController;
+use App\Http\Controllers\BeneficiosController;
 
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +55,8 @@ Route::resource('/producto', ProductoDetalleController::class);
 Route::resource('/listaproductos', ListaProductosController::class);
 
 Route::resource('/pyme', PerfilMYPEController::class);
+
+Route::resource('/beneficios', BeneficiosController::class)->middleware('auth.basic');
+Route::post("/beneficios/deshabilitar", [BeneficiosController::class, 'deshabilitar'])->middleware('auth.basic');
 
 require __DIR__.'/auth.php';

@@ -321,6 +321,11 @@ return [
             'text' => 'Consultas',
             'url'  => '/pregunta',
             'icon' => 'fas fa-headset',
+        ], 
+        [
+            'text' => 'Beneficios',
+            'url'  => '/beneficios',
+            'icon' => 'fa-duotone fa-info',
         ],
     ],
 
