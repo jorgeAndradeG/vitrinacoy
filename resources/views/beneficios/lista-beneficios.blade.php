@@ -20,12 +20,10 @@
                 <th scope="col">Estado</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Habilitar/Deshabilitar</th>
-
             </tr>
         </thead>
         <tbody>
             @foreach($beneficios as $beneficio)
-
             <tr>
                 <th>{{$beneficio->nombre}}</th>
                 @if($beneficio->estado == 1)
@@ -37,17 +35,18 @@
                     <p style="color:red">Inactivo</p>
                 </td>
                 @endif
-                <<td><a href="{{action('App\Http\Controllers\BeneficiosController@edit', $beneficio->id)}}" type="button"
-                        class="btn btn-success btn-sm"> <i class="far fa-edit"></i></a></td>
-                @if($beneficio->estado == 1)
-                <td><a type="button" class="btn btn-danger btn-sm ventana" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" data-id='{{$beneficio->id}}'><i class="far fa-trash-alt"></i></a>
-                </td>
-                @else
-                <td><a type="button" class="btn btn-success btn-sm restore" data-bs-toggle="modal-restore"
-                        data-bs-target="#restoreModal" data-id='{{$beneficio->id}}'><i
-                            class="fas fa-trash-restore"></i></a></td>
-                @endif
+                <<td><a href="{{action('App\Http\Controllers\BeneficiosController@edit', $beneficio->id)}}"
+                        type="button" class="btn btn-success btn-sm"> <i class="far fa-edit"></i></a></td>
+                    @if($beneficio->estado == 1)
+                    <td><a type="button" class="btn btn-danger btn-sm ventana" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-id='{{$beneficio->id}}'><i
+                                class="far fa-trash-alt"></i></a>
+                    </td>
+                    @else
+                    <td><a type="button" class="btn btn-success btn-sm restore" data-bs-toggle="modal-restore"
+                            data-bs-target="#restoreModal" data-id='{{$beneficio->id}}'><i
+                                class="fas fa-trash-restore"></i></a></td>
+                    @endif
             </tr>
 
             @endforeach
