@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Models\Rubro;
+use App\Models\Rrss;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
@@ -12,6 +13,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 use Intervention\Image\Facades\Image;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RegisteredUserController extends Controller
 {
@@ -84,11 +88,15 @@ class RegisteredUserController extends Controller
             // 'tiktok'=>$request->tiktok,
             'es_admin' => 0,
 
-        ]);
+        ])->assignRole('Mype');
 
         event(new Registered($user));
 
         Auth::login($user);
+
+        $rrss = Rrss::create([
+            'id_mype' => $user->id,
+        ]);
 
         return redirect('/perfil');
     }

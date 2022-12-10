@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/beneficios',[ApiController::class,'beneficios']);
 Route::get('/entidad_beneficios',[ApiController::class,'entidad_beneficios']);
 Route::post('/login',[ApiController::class,'login']);
+Route::post('/rrss',[ApiController::class,'rrss']);

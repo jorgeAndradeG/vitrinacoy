@@ -16,6 +16,11 @@ class PerfilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+        $this->middleware('can:Mype');
+     }
+
     public function index()
     {
         $user= Auth::user();

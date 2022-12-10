@@ -20,12 +20,19 @@
                                         <h4>{{ $mype->name }}</h4>
                                         <p>{{ $mype->descripcion }}</p>
                                         <div class="main-border-button">
-                                            <a href="https://www.instagram.com/{{ $mype->instagram }}"
-                                                target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                            <a href="https://www.tiktok.com/{{ $mype->tiktok }}" target="_blank"><i
+                                            <a href="https://www.instagram.com/{{ $mype->instagram }}" target="_blank"
+                                                class="clic-metric" data-id="{{$mype->id}}" data-red="instagram"><i
+                                                    class="fa-brands fa-instagram"></i></a>
+                                            <a href="{{ $mype->facebook }}" target="_blank"
+                                                class="clic-metric" data-id="{{ $mype->id }}" data-red="facebook"><i
+                                                    class="fa-brands fa-facebook"></i></a>
+                                            <a href="https://www.tiktok.com/{{ $mype->tiktok }}" target="_blank" class="clic-metric"
+                                                data-id="{{ $mype->id }}" data-red="tiktok"><i
                                                     class="fa-brands fa-tiktok"></i></a>
-                                            <!-- <a href="https://{{ $mype->whatsapp_business }}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a> -->
-                                            <a href="{{ $mype->sitio_web }}" target="_blank"><i
+                                            <!-- <a href="https://{{ $mype->whatsapp_business }}" target="_blank" class="clic-metric"
+                                                    data-red="whatsapp_business" data-id="{{ $mype->id }}"><i class="fa-brands fa-whatsapp"></i></a> -->
+                                            <a href="{{ $mype->sitio_web }}" target="_blank" class="clic-metric"
+                                                data-id="{{ $mype->id }}" data-red="sitio_web"><i
                                                     class="fa-solid fa-earth-americas"></i></i></a>
                                         </div>
                                     </div>
@@ -158,3 +165,28 @@
 </div>
 
 @stop
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).on("click", ".clic-metric", function() {
+    console.log("HOLA");
+    var id = $(this).data('id');
+    var red = $(this).data('red');
+    var obj = new Object();
+    obj.rrss = red;
+    obj.id_mype = id;
+    var jsonObj = JSON.stringify(obj);
+
+    fetch('http://localhost/api/rrss', {
+            method: 'POST',
+            body: jsonObj
+        })
+        .then(function(response) {
+            if (response.ok) {
+                return response.text()
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+
+        })
+});
+</script>

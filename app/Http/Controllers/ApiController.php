@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Entidad_beneficio;
 use App\Models\Beneficio;
+use App\Models\Rrss;
 
 class ApiController extends Controller
 {
@@ -58,10 +59,39 @@ class ApiController extends Controller
 
         $data = json_decode($request->getContent());
 
-
-
         return response()->json($response);
 
+    }
+
+    public function rrss(Request $request){
+
+        $data = json_decode($request->getContent());
+        $red = Rrss::where('id_mype', $data->id_mype)->firstOrFail();
+        if(isset($red)){
+            if($data->rrss == "instagram"){
+                $red->instagram = $red->instagram + 1;
+            }
+            else if($data->rrss == "tiktok"){
+                $red->tiktok = $red->tiktok + 1;
+            }
+            else if($data->rrss == "sitio_web"){
+                $red->sitio_web = $red->sitio_web + 1;
+            }
+            else if($data->rrss == "facebook"){
+                $red->facebook = $red->facebook + 1;
+            }
+            else if($data->rrss == "whatsapp_business"){
+                $red->whatsapp_business = $red->whatsapp_business + 1;
+            }
+            $result = $red->save();
+            if($result){
+                return ["result" => "Clear"];
+            }else{
+                return ["result" => "Fallo 1"];
+            }
+        }else{
+            return ["result" => "Fallo 2"];
+        }
     }
 
 }

@@ -32,7 +32,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/perfil');
+        $user = Auth::user();
+        if($user->es_admin == 0){
+            return redirect('/perfil');
+        }else{
+            return redirect('/mypes');
+        }
     }
 
     /**

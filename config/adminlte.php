@@ -311,21 +311,37 @@ return [
             'text' => 'Datos',
             'url'  => '/perfil',
             'icon' => 'fas fa-fw fa-user',
+            'can' => 'Mype'
         ],
         [
             'text' => 'Productos',
             'url'  => '/productos',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'Mype'
         ],
         [
             'text' => 'Consultas',
             'url'  => '/pregunta',
             'icon' => 'fas fa-headset',
+            'can' => 'Mype'
         ], 
+        [
+            'text' => 'Usuarios',
+            'url'  => '/mypes',
+            'icon' => 'fas fa-fw fa-user',
+            'can' => 'Administrador'
+        ],
+        [
+            'text' => 'Consultas',
+            'url'  => '/listapreguntas',
+            'icon' => 'fas fa-headset',
+            'can' => 'Administrador'
+        ],
         [
             'text' => 'Beneficios',
             'url'  => '/beneficios',
             'icon' => 'fa-duotone fa-info',
+            'can' => 'Administrador'
         ],
     ],
 

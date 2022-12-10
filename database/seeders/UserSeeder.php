@@ -6,9 +6,11 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Traits\HasRoles;
 
 class UserSeeder extends Seeder
 {
+    use HasRoles;
     /**
      * Run the database seeds.
      *
@@ -21,7 +23,7 @@ class UserSeeder extends Seeder
             ['name' => 'Franco Paillaleve', 'email' => 'frankodfi530@gmail.com', 'password' => Hash::make('123456'), 'es_admin' => '1']
         ];
         foreach($super_admins as $sa){
-            User::create($sa);
+            User::create($sa)->assignRole('Administrador');
         }
     }
 }

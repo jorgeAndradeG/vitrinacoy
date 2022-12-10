@@ -14,6 +14,11 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+        $this->middleware('can:Administrador');
+     }
+
     public function index()
     {
         $users = User::all();

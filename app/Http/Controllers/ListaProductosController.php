@@ -13,6 +13,10 @@ class ListaProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('can:Mype');
+     }
+     
     public function index()
     {
         $productos = Producto::Where('estado',1)->inRandomOrder()->get();
