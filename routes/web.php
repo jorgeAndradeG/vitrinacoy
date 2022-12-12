@@ -36,17 +36,17 @@ Route::get('/dashboard', function () {
 Route::get('/registro', function (){
     return view('usuario.register');
 });
-Route::resource('/productos', ProductosController::class)->middleware('auth.basic');
-Route::post("/productos/eliminar", [ProductosController::class, 'eliminar'])->middleware('auth.basic');
+Route::resource('/productos', ProductosController::class)->middleware(['auth.basic','verified']);
+Route::post("/productos/eliminar", [ProductosController::class, 'eliminar'])->middleware(['auth.basic','verified']);
 
 Route::resource('/mypes', AdminController::class)->middleware('auth.basic');
 Route::post("/mypes/deshabilitar", [AdminController::class, 'deshabilitar'])->middleware('auth.basic');
 
-Route::resource('/pregunta', PreguntaController::class)->middleware('auth.basic');
+Route::resource('/pregunta', PreguntaController::class)->middleware(['auth.basic','verified']);
 
 Route::resource('/listapreguntas', AdminSoporteController::class)->middleware('auth.basic');
 
-Route::resource('/perfil', PerfilController::class)->middleware('auth.basic');
+Route::resource('/perfil', PerfilController::class)->middleware(['auth.basic','verified']);
 
 Route::resource('/emprendimientos', EmprendimientosController::class);
 

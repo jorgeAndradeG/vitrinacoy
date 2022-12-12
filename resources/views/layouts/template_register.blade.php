@@ -45,9 +45,9 @@
                             @auth
                             <li><a href="{{ url('/perfil') }}">Mi Perfil</a></li>
                             @else
-                            <!-- <li></li> -->
+                            <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
                             @if (Route::has('register'))
-                            <!-- <li></li> -->
+                            <li><a href="{{ route('register') }}">Registrarse</a></li>
                             @endif
                             @endauth
 

@@ -313,12 +313,12 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'can' => 'Mype'
         ],
-        [
-            'text' => 'Productos',
-            'url'  => '/productos',
-            'icon' => 'fas fa-fw fa-lock',
-            'can' => 'Mype'
-        ],
+        // [
+        //     'text' => 'Productos',
+        //     'url'  => '/productos',
+        //     'icon' => 'fas fa-fw fa-lock',
+        //     'can' => 'Mype'
+        // ],
         [
             'text' => 'Consultas',
             'url'  => '/pregunta',

@@ -73,15 +73,15 @@
                     </div>
                     <div class="form-floating mb-3">
                         <label for="tiktok">TikTok</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Solo el nombre de usuario"></i></small>
-                        <input type="text" class="form-control" name="tiktok" id="tiktok" value="{{$usuario->tiktok}}" placeholder="@nombre de usuario" disabled>
+                        <input type="text" class="form-control" name="tiktok" id="tiktok" value="{{$usuario->tiktok}}" placeholder="nombre de usuario" disabled>
                     </div>
                     <div class="form-floating mb-3">
                         <label for="sitio_web">Pagina Web</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Link completo"></i></small>
                         <input type="text" class="form-control" name="sitio_web" id="sitio_web" value="{{$usuario->sitio_web}}" placeholder="www.tusitio.cl" disabled>
                     </div>
                     <div class="form-floating mb-3">
-                        <label for="whatsapp_business">Whatsapp Business</label>
-                        <input type="text" class="form-control" name="whatsapp_business" id="whatsapp_business" value="{{$usuario->whatsapp_business}}" disabled>
+                        <label for="whatsapp_business">Whatsapp Business</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Numero completo sin '+'"></i></small>
+                        <input type="text" class="form-control" name="whatsapp_business" id="whatsapp_business" value="{{$usuario->whatsapp_business}}" placeholder="56987654321" disabled>
                     </div>
 
                     <hr>

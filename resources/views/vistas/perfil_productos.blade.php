@@ -20,30 +20,20 @@
                                         <h4>{{ $mype->name }}</h4>
                                         <p>{{ $mype->descripcion }}</p>
                                         <div class="main-border-button">
-                                            @if(isset($mype->instagram))
                                             <a href="https://www.instagram.com/{{ $mype->instagram }}" target="_blank"
                                                 class="clic-metric" data-id="{{$mype->id}}" data-red="instagram"><i
                                                     class="fa-brands fa-instagram"></i></a>
-                                            @endif
-                                            @if(isset($mype->facebook))
                                             <a href="{{ $mype->facebook }}" target="_blank"
                                                 class="clic-metric" data-id="{{ $mype->id }}" data-red="facebook"><i
                                                     class="fa-brands fa-facebook"></i></a>
-                                            @endif
-                                            @if(isset($mype->tiktok))
                                             <a href="https://www.tiktok.com/{{ $mype->tiktok }}" target="_blank" class="clic-metric"
                                                 data-id="{{ $mype->id }}" data-red="tiktok"><i
                                                     class="fa-brands fa-tiktok"></i></a>
-                                            @endif
-                                            @if(isset($mype->whatsapp_business))
-                                            <a href="https://wa.me/{{ $mype->whatsapp_business }}" target="_blank" class="clic-metric"
-                                                    data-red="whatsapp_business" data-id="{{ $mype->id }}"><i class="fa-brands fa-whatsapp"></i></a>
-                                            @endif
-                                            @if(isset($mype->sitio_web))
-                                            <a href="http://{{ $mype->sitio_web }}" target="_blank" class="clic-metric"
+                                            <!-- <a href="https://{{ $mype->whatsapp_business }}" target="_blank" class="clic-metric"
+                                                    data-red="whatsapp_business" data-id="{{ $mype->id }}"><i class="fa-brands fa-whatsapp"></i></a> -->
+                                            <a href="{{ $mype->sitio_web }}" target="_blank" class="clic-metric"
                                                 data-id="{{ $mype->id }}" data-red="sitio_web"><i
                                                     class="fa-solid fa-earth-americas"></i></i></a>
-                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +50,36 @@
                                     </ul>
                                 </div>
                             </div>
-                           
+                            @if(count($productos) > 0)
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="clips">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="heading-section">
+                                                    <h4><em>Productos</em></h4>
+                                                </div>
+                                            </div>
+                                            @foreach($productos as $producto)
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="item">
+                                                    <div class="thumb">
+                                                        <img src="/{{ $producto->foto }}" alt="">
+                                                    </div>
+                                                    <div class="down-content">
+                                                        <h4>{{ $producto->nombre }} </h4>
+                                                        <!-- <span><i class="fa fa-eye"></i> 250</span> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                            <!-- <div class="col-lg-12">
+                          <div class="main-button">
+                            <a href="#">Load More Clips</a>
+                          </div>
+                        </div> -->
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

@@ -70,7 +70,49 @@
                 </div>
                 <!-- ***** Featured Games End ***** -->
 
-                 
+                  <!-- ***** Live Stream Start ***** -->
+
+                  <div class="row mt-5 h-50">
+                    <div class="col-lg-12">
+                        <div class="featured-games header-text">
+                            <div class="heading-section">
+                                <h4><em>Explora</em> Productos</h4>
+                            </div>
+                            <div class="owl-features owl-carousel">
+                                @foreach($productos as $producto)
+                                <div class="item">
+                                    <a href="{{action('App\Http\Controllers\ProductoDetalleController@show',$producto->id)}}">
+                                        <div class="thumb">
+                                            <img src="{{ $producto->foto }}" alt="">
+                                            <!-- <div class="hover-effect">
+                                            <h6>2.4K Streaming</h6>
+                                        </div> -->
+                                        </div>
+
+                                        <h4>{{ $producto->nombre }}<br>
+                                            @isset($producto->descripcion)
+                                            <span>@php echo substr($producto->descripcion,0,15) @endphp ...</span>
+                                            @endisset
+                                        </h4>
+                                        <!-- <ul>
+                                        <li><i class="fa fa-star"></i> 4.8</li>
+                                        <li><i class="fa fa-download"></i> 2.3M</li>
+                                    </ul> -->
+                                    </a>
+                                </div>
+                                @endforeach
+
+                            </div>
+                            <div class="main-button mt-5">
+                                <a href="/listaproductos">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+            <!-- ***** Live Stream End ***** -->
 
                 <!-- ***** Start Stream Start ***** -->
                 <div class="start-stream">

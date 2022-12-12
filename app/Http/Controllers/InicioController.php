@@ -18,7 +18,7 @@ class InicioController extends Controller
      */
     public function index()
     {
-        $mypes = User::Where('estado',1)->where('es_admin',0)->inRandomOrder()->get();
+        $mypes = User::Where('estado',1)->where('es_admin',0)->where('email_verified_at','!=','null')->inRandomOrder()->get();
         $productos = Producto::Where('estado',1)->inRandomOrder()->get();
         $categorias = Rubro::Where('estado',1)->inRandomOrder()->get();
         return view('welcome', compact('mypes','productos','categorias')); 
