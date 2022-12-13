@@ -54,7 +54,7 @@
                                         <li>Dirección <span>{{ $mype->direccion }}</span></li>
                                         @endisset
                                         @isset($mype->telefono)
-                                        <li>Teléfono <span>+56{{ $mype->telefono }}</span></li>
+                                        <li>Teléfono <span>+569{{ $mype->telefono }}</span></li>
                                         @endisset
                                         <li>Email <span>{{ $mype->email }}</span></li>
                                     </ul>
