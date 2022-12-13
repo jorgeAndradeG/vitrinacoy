@@ -64,7 +64,7 @@
 
                     <div class="form-floating mb-3">
                         <label for="instagram">Instagram</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Solo el nombre de usuario"></i></small>
-                        <input type="text" class="form-control" name="instagram" id="instagram" value="{{$usuario->instagram}}" placeholder="nombre de usuario" disabled>
+                        <input onChange="removeChar();" type="text" class="form-control" name="instagram" id="instagram" value="{{$usuario->instagram}}" placeholder="nombre de usuario" disabled>
                     </div>
 
                     <div class="form-floating mb-3"> 
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-floating mb-3">
                         <label for="tiktok">TikTok</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Solo el nombre de usuario"></i></small>
-                        <input type="text" class="form-control" name="tiktok" id="tiktok" value="{{$usuario->tiktok}}" placeholder="nombre de usuario" disabled>
+                        <input onChange="removeChar();" type="text" class="form-control" name="tiktok" id="tiktok" value="{{$usuario->tiktok}}" placeholder="nombre de usuario" disabled>
                     </div>
                     <div class="form-floating mb-3">
                         <label for="sitio_web">Pagina Web</label> <small><i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Link completo"></i></small>
@@ -154,5 +154,15 @@
 <script>
     $(document).ready(function(){
     $('[data-bs-toggle="tooltip"]').tooltip();
+    removeChar();
     });
+
+    function removeChar() {
+        var a = $("#instagram").val();
+        var e = $("#tiktok").val();
+        a = a.replace('@', '');
+        e = e.replace('@', '');
+        $("#instagram").val(a);
+        $("#tiktok").val(e);
+    }
 </script>

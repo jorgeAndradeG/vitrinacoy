@@ -117,10 +117,11 @@ class PerfilController extends Controller
         $usuario->instagram = $request['instagram'];
         $usuario->facebook = $request['facebook'];
         if($request['tiktok'] != ""){
-            $usuario->tiktok = $request['tiktok'];
-        }else{
             $usuario->tiktok = '@' . $request['tiktok'];
+        }else{
+            $usuario->tiktok = null;
         }
+        
         if($path_image != ""){
             $usuario->foto = $path_image;
         }
