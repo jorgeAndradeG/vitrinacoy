@@ -16,7 +16,7 @@ class EmprendimientosController extends Controller
      */
     public function index()
     {
-        $mypes = User::Where('estado',1)->where('es_admin',0)->where('email_verified_at','!=','null')->inRandomOrder()->get();
+        $mypes = User::Where('estado',1)->where('es_admin',0)->where('email_verified_at','!=',null)->inRandomOrder()->get();
         $rubros = Rubro::All();
 
         return view('vistas.emprendimientos', compact('mypes','rubros')); 
