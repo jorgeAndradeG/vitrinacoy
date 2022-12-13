@@ -7,10 +7,10 @@
             <div class="page-content">
 
                 <!-- ***** Banner Start ***** -->
-                <div class="row  mt-5">
+                <div class="row">
                     <div class="col-lg-12">
-                        <div class="main-profile ">
-                            <div class="row">
+                        <div class="main-profile mt-5">
+                            <div class="row mt-3">
                                 <div class="col-lg-4">
                                     <img src="/{{ $mype->foto }}" alt="" style="border-radius: 23px;">
                                 </div>
@@ -50,13 +50,23 @@
                                 <div class="col-lg-4 align-self-center">
                                     <ul>
                                         <!-- <li>Nombre <span>{{ $mype->name }}</span></li> -->
-                                        @isset($mype->direccion)
-                                        <li>Dirección <span>{{ $mype->direccion }}</span></li>
-                                        @endisset
+                                        
+                                        <li>Dirección <span>
+                                            @isset($mype->direccion)
+                                                {{ $mype->direccion }} 
+                                            @else 
+                                                No disponible
+                                            @endisset</span>
+                                        </li>
+                                        
+                                        <li>Teléfono <span>
                                         @isset($mype->telefono)
-                                        <li>Teléfono <span>+569{{ $mype->telefono }}</span></li>
+                                            +569{{ $mype->telefono }}
+                                        @else
+                                            No disponible</span>
+                                        </li>
                                         @endisset
-                                        <li>Email <span>{{ $mype->email }}</span></li>
+                                        <!-- <li>Email <span>{{ $mype->email }}</span></li> -->
                                     </ul>
                                 </div>
                             </div>
