@@ -31,7 +31,7 @@
                                                     class="fa-brands fa-facebook"></i></a>
                                             @endif
                                             @if(isset($mype->tiktok))
-                                            <a href="https://www.tiktok.com/%40{{ $mype->tiktok }}" target="_blank" class="clic-metric"
+                                            <a href="https://www.tiktok.com/{{ $mype->tiktok }}" target="_blank" class="clic-metric"
                                                 data-id="{{ $mype->id }}" data-red="tiktok"><i
                                                     class="fa-brands fa-tiktok"></i></a>
                                             @endif
