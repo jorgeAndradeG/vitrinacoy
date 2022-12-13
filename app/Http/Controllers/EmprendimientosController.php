@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Rubro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,8 +16,10 @@ class EmprendimientosController extends Controller
      */
     public function index()
     {
-        $mypes = User::Where('estado',1)->where('es_admin',0)->inRandomOrder()->get();
-        return view('vistas.emprendimientos', compact('mypes')); 
+        $mypes = User::Where('estado',1)->where('es_admin',0)->where('email_verified_at','!=','null')->inRandomOrder()->get();
+        $rubros = Rubro::All();
+
+        return view('vistas.emprendimientos', compact('mypes','rubros')); 
         //
     }
 

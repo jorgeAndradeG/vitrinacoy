@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Entidad_beneficio;
 use App\Models\Beneficio;
 use App\Models\Rrss;
+use App\Models\User;
 
 class ApiController extends Controller
 {
@@ -91,6 +92,16 @@ class ApiController extends Controller
             }
         }else{
             return ["result" => "Fallo 2"];
+        }
+    }
+
+    public function categorias_mypes(Request $request){
+        if($request->has('id_rubro')){
+            $mypes = User::Where('id_rubro',$request->id_rubro)->where('estado',1)->where('email_verified_at','!=','null')->inRandomOrder()->get();
+            return response()->json($mypes);
+        }else{
+            $mypes = User::Where('id_rubro','!=','null')->where('estado',1)->where('email_verified_at','!=','null')->inRandomOrder()->get();
+            return response()->json($mypes);
         }
     }
 

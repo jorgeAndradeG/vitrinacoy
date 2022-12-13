@@ -23,3 +23,4 @@ Route::get('/beneficios',[ApiController::class,'beneficios']);
 Route::get('/entidad_beneficios',[ApiController::class,'entidad_beneficios']);
 Route::post('/login',[ApiController::class,'login']);
 Route::post('/rrss',[ApiController::class,'rrss']);
+Route::get('/mypes_by_categorias',[ApiController::class,'categorias_mypes']);
