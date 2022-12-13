@@ -85,7 +85,7 @@
                                     <i class="fa-brands fa-instagram"></i>
                                     </div> -->
                                     <h4>Contáctanos</h4>
-                                    <p>Escríbenos a nuestro <a href=""><em>instagram</em></a> y te haremos llegar el
+                                    <p>Escríbenos a nuestro <a href="http://www.instagram.com/"><em>instagram</em></a> y te haremos llegar el
                                         formulario de ingreso.</p>
                                 </div>
                             </div>

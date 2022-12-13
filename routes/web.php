@@ -12,6 +12,7 @@ use App\Http\Controllers\PerfilMYPEController;
 use App\Http\Controllers\ListaProductosController;
 use App\Http\Controllers\ProductoDetalleController;
 use App\Http\Controllers\BeneficiosController;
+use App\Http\Controllers\DashboardRrssController;
 
 use App\Http\Controllers\ApiController;
 
@@ -29,9 +30,11 @@ use App\Http\Controllers\ApiController;
 Route::resource('/', InicioController::class);
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::resource('/dashboard', DashboardRrssController::class)->middleware(['auth.basic','verified']);
 
 Route::get('/registro', function (){
     return view('usuario.register');
