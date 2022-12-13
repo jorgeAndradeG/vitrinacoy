@@ -62,7 +62,7 @@
                                 @endforeach
                             </ul>
                             <div class="text-button">
-                                <a href="/categorias">Ver todas</a>
+                                <a href="/emprendimientos">Ver todas</a>
                             </div>
                         </div>
                     </div>

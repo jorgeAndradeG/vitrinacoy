@@ -27,6 +27,7 @@
 
                         <div class="row lista-mypes-filtro">
 
+                            @if(count($mypes) > 0)
                             @foreach($mypes as $mype)
                                 @if($mype->id_rubro == $rubro->id)
                                     <div class="col-lg-3 col-sm-6">
@@ -57,6 +58,8 @@
                                     </div>
                                 @endif
                             @endforeach
+                            @endif
+
                     @endforeach
                         <!-- <div class="col-lg-12">
                             <div class="main-button">
@@ -73,41 +76,3 @@
 </div>
 @stop
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-var mypes = [];
-
-// $(document).on("change", "#categorias_emprendimientos", async function() {
-//     var id = $(this).val();
-//     var respuesta = await fetch('http://localhost/api/mypes_by_categorias?id_rubro=' + id, {
-//             method: 'GET',
-    
-//         }).then((response) => {return response.json()}
-//         );
-//     console.log(respuesta);
-// });
-
-// $(document).ready(async function() {
-    
-//     var respuesta = await fetch('http://localhost/api/mypes_by_categorias', {
-//             method: 'GET',
-    
-//         }).then((response) => {return response.json()}
-//         );
-//     mypes = respuesta;
-//     console.log(mypes);
-
-//     string name = ' <div class="col-lg-3 col-sm-6">';
-//     name + = ' <div class="item">';
-//     name +=                                 '<a href="{{action('App\Http\Controllers\PerfilMYPEController@show',$mype->id)}}">';
-//                                     <div class="thumb">
-//                                         <img src="{{ $mype->foto }}" alt="">
-//                                         <div class="hover-effect">
-//                                             <div class="content">';
-    
-//     (".lista-mypes-filtro").append();
-
-
-
-// });
-</script>
