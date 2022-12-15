@@ -8,16 +8,24 @@
                 <x-application-logo class="w-50 h-50 fill-current text-gray-500" />
             </a>
         </x-slot>
-
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
             <div class="container">
                 <div class="row align-items-start">
                     <div class="col-12">
                         <h3 style='text-align:center'>Registrarse</h3>
-
+                        <br>
                         <div class="form-floating mb-3">
-                            <label for="nombre">Nombre Mype (*)</label>
+                            <label for="nombre">Nombre del emprendimiento (*)</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="" required>
                         </div>
 
