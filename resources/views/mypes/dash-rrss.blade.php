@@ -6,17 +6,47 @@
 @section ('title','Dashboard')
 
 @section('content')
-<div class="container">
-
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-12 mt-2">
+            <h3>Panel principal</h3>
+        </div>
+    </div>
     <div class="row align-items-start">
-        <div class="col-4"></div>
-        <div class="col-4">
-        <h3 style="text-align:center;">Interés de los usuarios en tus redes sociales</h3>
-            <div>
-                <canvas id="myChart" style='max-width:100%'></canvas>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Estadísticas de tus redes sociales</h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <canvas id="myChart" style='max-width:100%'></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stats">
+                        <p>fecha</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-4"></div>
+        <div class="col-md-8 mt-4">
+        <div class="card">
+                <div class="card-header">
+                    <h4>Estadísticas de tus redes sociales</h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <canvas id="myChart2" style='max-width:100%'></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stats">
+                        <p>fecha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script>
@@ -45,6 +75,7 @@ const config_1 = {
     type: 'doughnut',
     data: data_1,
 };
+
 var ctx = document.getElementById('myChart').getContext('2d');
 new Chart(ctx, config_1);
 </script>
