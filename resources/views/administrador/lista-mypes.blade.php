@@ -15,7 +15,7 @@
                 <tr>
                     <th scope="col">Nombre</th>
                     <!-- <th scope="col">Correo</th> -->
-                    <th scope="col">Rubro</th>
+                    <!-- <th scope="col">Rubro</th> -->
                     <th scope="col">Estado</th>
                     <th scope="col">Estadisticas</th>
                     <th scope="col">Habilitar/Deshabilitar</th>
@@ -28,7 +28,7 @@
                 <tr>
                     <th>{{$user->name}}</th>
                     <!-- <th>{{$user->email}}</th> -->
-                    <th>{{$user->id_rubro}}</th>
+                    <!-- <th>{{$user->id_rubro}}</th> -->
                     @if($user->estado == 1)
                     <td>
                         <p style="color:green">Activo</p>
