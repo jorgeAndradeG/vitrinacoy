@@ -23,11 +23,11 @@
                                             <a href="https://www.instagram.com/{{ $mype->instagram }}" target="_blank"
                                                 class="clic-metric" data-id="{{$mype->id}}" data-red="instagram"><i
                                                     class="fa-brands fa-instagram"></i></a>
-                                            <a href="{{ $mype->facebook }}" target="_blank"
-                                                class="clic-metric" data-id="{{ $mype->id }}" data-red="facebook"><i
+                                            <a href="{{ $mype->facebook }}" target="_blank" class="clic-metric"
+                                                data-id="{{ $mype->id }}" data-red="facebook"><i
                                                     class="fa-brands fa-facebook"></i></a>
-                                            <a href="https://www.tiktok.com/{{ $mype->tiktok }}" target="_blank" class="clic-metric"
-                                                data-id="{{ $mype->id }}" data-red="tiktok"><i
+                                            <a href="https://www.tiktok.com/{{ $mype->tiktok }}" target="_blank"
+                                                class="clic-metric" data-id="{{ $mype->id }}" data-red="tiktok"><i
                                                     class="fa-brands fa-tiktok"></i></a>
                                             <!-- <a href="https://{{ $mype->whatsapp_business }}" target="_blank" class="clic-metric"
                                                     data-red="whatsapp_business" data-id="{{ $mype->id }}"><i class="fa-brands fa-whatsapp"></i></a> -->
@@ -39,14 +39,21 @@
                                 </div>
                                 <div class="col-lg-4 align-self-center">
                                     <ul>
-                                        <!-- <li>Nombre <span>{{ $mype->name }}</span></li> -->
-                                        @isset($mype->direccion)
-                                        <li>Dirección <span>{{ $mype->direccion }}</span></li>
+                                        <li>Dirección <span>
+                                                @isset($mype->direccion)
+                                                {{ $mype->direccion }}
+                                                @else
+                                                No disponible
+                                                @endisset</span>
+                                        </li>
+
+                                        <li>Teléfono <span>
+                                                @isset($mype->telefono)
+                                                +569{{ $mype->telefono }}
+                                                @else
+                                                No disponible</span>
+                                        </li>
                                         @endisset
-                                        @isset($mype->telefono)
-                                        <li>Teléfono <span>+56{{ $mype->telefono }}</span></li>
-                                        @endisset
-                                        <li>Email <span>{{ $mype->email }}</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -65,19 +72,34 @@
                                                 <div class="item">
                                                     <div class="thumb">
                                                         <img src="/{{ $producto->foto }}" alt="">
-                                                    </div>
-                                                    <div class="down-content">
-                                                        <h4>{{ $producto->nombre }} </h4>
-                                                        <!-- <span><i class="fa fa-eye"></i> 250</span> -->
+                                                        <div class="row mt-2 justify-content-between">
+                                                            <ul>
+                                                                <li>
+                                                                    <h4 class="text-left">{{ $producto->nombre }} </h4>
+                                                                </li>
+                                                                <li>
+                                                                    <em style="color:green" class="text-right">
+                                                                        ${{ $producto->precio }}</em>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="row">
+                                                                        <div class="col-md-2"></div>
+                                                                        <div class="col-md-8">
+                                                                            <a style="all:revert"
+                                                                                href="{{action('App\Http\Controllers\ProductoDetalleController@show',$producto->id)}}">
+                                                                                <span><i class="fa fa-eye"></i> Ver
+                                                                                    producto</span></a>
+                                                                        </div>
+                                                                        <div class="col-md-2"></div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             @endforeach
-                                            <!-- <div class="col-lg-12">
-                          <div class="main-button">
-                            <a href="#">Load More Clips</a>
-                          </div>
-                        </div> -->
                                         </div>
                                         @endif
                                     </div>

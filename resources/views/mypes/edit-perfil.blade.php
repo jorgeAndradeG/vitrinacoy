@@ -36,14 +36,14 @@
                 @endif
                 <div class="row">
 
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" name="name" id="nombre" value="{{$usuario->name}}"
                                 required>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <!-- <div class="form-floating mb-3">
                             <label for="mail">Mail</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
@@ -60,14 +60,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="direccion">Dirección</label>
                             <input type="text" class="form-control" name="direccion" id="direccion"
                                 value="{{$usuario->direccion}}">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                     <div class="form-floating mb-3">
                             <label for="whatsapp_business">Whatsapp Business</label> <small><i
                                     class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right"
@@ -80,7 +80,7 @@
 
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="instagram">Instagram</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
@@ -89,7 +89,7 @@
                                 id="instagram" value="{{$usuario->instagram}}" placeholder="nombre de usuario">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="facebook">Facebook</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
@@ -102,7 +102,7 @@
 
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="tiktok">TikTok</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
@@ -111,7 +111,7 @@
                                 value="{{$usuario->tiktok}}" placeholder="nombre de usuario">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="sitio_web">Pagina Web</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
@@ -124,18 +124,18 @@
 
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
 
 
                     </div>
                 </div>
 
                 <div class="row align-items-end">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-floating mb-3">
                             <label for="imagen">Imagen de Perfil</label><br>
                             @if(isset($usuario->foto))
@@ -151,7 +151,7 @@
                         <input type="file" class="form-control" id="imagen" name="file">
 
                     </div>
-                    <div class="col-6" style="text-align:center">
+                    <div class="col-md-6" style="text-align:center">
                         <button type="submit" class="btn btn-success" id="botonEditar">Actualizar Datos</button>
                     </div>
                 </div>

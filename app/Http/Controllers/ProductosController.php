@@ -22,7 +22,7 @@ class ProductosController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $productos = Producto::Where('id_mype', $user->id)->where('estado',1)->get();
+        $productos = Producto::Where('id_mype', $user->id)->get();
         return view ('mypes.productos', compact('productos')); 
         //
     }
@@ -49,6 +49,8 @@ class ProductosController extends Controller
         $request->validate([
             'nombre' =>'required|string|max:255',
             'descripcion' => 'required|string|max:255',
+            'precio' => 'required|gt:0',
+            'stock' => 'required|gte:0',
         ]);
         
         $path_image = "";
@@ -85,6 +87,8 @@ class ProductosController extends Controller
             'nombre'=> $request->nombre,
             'descripcion'=>$request->descripcion,
             'estado'=>$estado,
+            'precio'=>$request->precio,
+            'stock'=>$request->stock,
             'foto'=> $path_image,
             'id_mype'=>$user->id,
             
@@ -130,6 +134,8 @@ class ProductosController extends Controller
         $request->validate([
             'nombre' =>'required|string|max:255',
             'descripcion' => 'required|string|max:255',
+            'precio' => 'required|gt:0',
+            'stock' => 'required|gte:0',
         ]);
         $user = auth::user();
         if($request['estado'] == 'on' ){
@@ -162,6 +168,8 @@ class ProductosController extends Controller
         $producto = Producto::findOrFail($id);
         $producto->nombre = $request['nombre'];
         $producto->descripcion= $request['descripcion'];
+        $producto->precio= $request['precio'];
+        $producto->stock= $request['stock'];
         $producto->estado = $estado;
         if($path_image != ""){
             $producto->foto = $path_image;
@@ -187,6 +195,8 @@ class ProductosController extends Controller
         $producto = Producto::findOrFail($request['modalid']);
         if($producto->estado == 1){
             $producto->estado = 0;
+        }else{
+            $producto->estado = 1;
         }
         $producto->save();
         return redirect('/productos');

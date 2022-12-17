@@ -20,6 +20,8 @@ return new class extends Migration
             $table->longText('descripcion');
             $table->string('foto');
             $table->Integer('estado');
+            $table->Integer('stock');
+            $table->Integer('precio');
             $table->foreign('id_mype')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

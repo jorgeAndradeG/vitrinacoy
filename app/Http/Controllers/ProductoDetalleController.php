@@ -53,7 +53,11 @@ class ProductoDetalleController extends Controller
     public function show($id)
     {
         $producto = Producto::findOrFail($id);
-        return view('vistas.producto')->with(['producto'=>$producto]);
+        $cantidad = [];
+        for($i = 0; $i < $producto->stock; $i++){
+            array_push($cantidad, $i+1);
+        }
+        return view('vistas.producto', compact('cantidad'))->with(['producto'=>$producto]);
     }
 
     /**

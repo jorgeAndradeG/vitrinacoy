@@ -13,6 +13,7 @@ use App\Http\Controllers\ListaProductosController;
 use App\Http\Controllers\ProductoDetalleController;
 use App\Http\Controllers\BeneficiosController;
 use App\Http\Controllers\DashboardRrssController;
+use App\Http\Controllers\PaymentController;
 
 use App\Http\Controllers\ApiController;
 
@@ -61,5 +62,7 @@ Route::resource('/pyme', PerfilMYPEController::class);
 
 Route::resource('/beneficios', BeneficiosController::class)->middleware('auth.basic');
 Route::post("/beneficios/deshabilitar", [BeneficiosController::class, 'deshabilitar'])->middleware('auth.basic');
+
+Route::resource('/payment', PaymentController::class);
 
 require __DIR__.'/auth.php';
