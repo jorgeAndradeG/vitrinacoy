@@ -25,7 +25,7 @@ class ApiController extends Controller
         }
 
         if($request->has('edad_minima')){
-            $beneficios = $beneficios->where('edad_minima', '>=', $request['edad_minima']);
+            $beneficios = $beneficios->where('edad_minima', '<=', $request['edad_minima']);
         }
        
         else if($request->has('ventas_netas_minimas')){
