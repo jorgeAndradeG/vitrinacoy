@@ -35,7 +35,7 @@
                     <p style="color:red">Inactivo</p>
                 </td>
                 @endif
-                <<td><a href="{{action('App\Http\Controllers\BeneficiosController@edit', $beneficio->id)}}"
+                <td><a href="{{action('App\Http\Controllers\BeneficiosController@edit', $beneficio->id)}}"
                         type="button" class="btn btn-success btn-sm"> <i class="far fa-edit"></i></a></td>
                     @if($beneficio->estado == 1)
                     <td><a type="button" class="btn btn-danger btn-sm ventana" data-bs-toggle="modal"
