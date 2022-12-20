@@ -14,32 +14,28 @@ class ApiController extends Controller
     
     public function beneficios(Request $request){
 
+        $campos = ["tipo_persona_postulante","sexo_postulante","meses_antiguedad_inicio_actividades","participa_en_fosis"];
+        $campos_comparables = ["edad_minima","ventas_netas_minimas","ventas_netas_maximas","meses_antiguedad_inicio_actividades"];
+        // $beneficios = array();
+        $beneficios = Beneficio::all();
+        foreach($campos as $campo){
+            if($request->has($campo)){
+                $beneficios = $beneficios->where($campo,$request[$campo]);
+            }
+        }
+
         if($request->has('edad_minima')){
-            $beneficios = Beneficio::where('edad_minima', '>=', $request['edad_minima'])->get();
+            $beneficios = $beneficios->where('edad_minima', '>=', $request['edad_minima'])->get();
         }
-        else if($request->has('tipo_persona_postulante')){
-            $beneficios = Beneficio::where('tipo_persona_postulante',$request['tipo_persona_postulante'])->get();
-        }
-        else if($request->has('sexo_postulante')){
-            $beneficios = Beneficio::where('sexo_postulante',$request['sexo_postulante'])->get();
-        }
-        else if($request->has('tiene_inicio_actividades')){
-            $beneficios = Beneficio::where('tiene_inicio_actividades',$request['tiene_inicio_actividades'])->get();
-        }
+       
         else if($request->has('ventas_netas_minimas')){
-            $beneficios = Beneficio::where('ventas_netas_minimas','>=',$request['ventas_netas_minimas'])->get();
+            $beneficios = $beneficios->where('ventas_netas_minimas','>=',$request['ventas_netas_minimas'])->get();
         }
         else if($request->has('ventas_netas_maximas')){
-            $beneficios = Beneficio::where('ventas_netas_maximas','<=',$request['ventas_netas_maximas'])->get();
+            $beneficios = $beneficios->where('ventas_netas_maximas','<=',$request['ventas_netas_maximas'])->get();
         }
         else if($request->has('meses_antiguedad_inicio_actividades')){
-            $beneficios = Beneficio::where('meses_antiguedad_inicio_actividades','>=',$request['meses_antiguedad_inicio_actividades'])->get();
-        }
-        else if($request->has('participa_en_fosis')){
-            $beneficios = Beneficio::where('participa_en_fosis',$request['participa_en_fosis'])->get();
-        }
-        else{
-            $beneficios = Beneficio::all();
+            $beneficios = $beneficios->where('meses_antiguedad_inicio_actividades','>=',$request['meses_antiguedad_inicio_actividades'])->get();
         }
 
         return response()->json($beneficios);
