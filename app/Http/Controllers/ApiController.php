@@ -37,8 +37,12 @@ class ApiController extends Controller
         else if($request->has('meses_antiguedad_inicio_actividades')){
             $beneficios = $beneficios->where('meses_antiguedad_inicio_actividades','>=',$request['meses_antiguedad_inicio_actividades']);
         }
+        $be = array();
+        foreach($beneficios as $b){
+            array_push($be,$b);
+        }
 
-        return response()->json($beneficios);
+        return response()->json($b);
 
     }
 
