@@ -42,7 +42,7 @@ class ApiController extends Controller
             array_push($be,$b);
         }
 
-        return response()->json($b);
+        return response()->json($be);
 
     }
 
