@@ -25,17 +25,17 @@ class ApiController extends Controller
         }
 
         if($request->has('edad_minima')){
-            $beneficios = $beneficios->where('edad_minima', '>=', $request['edad_minima'])->get();
+            $beneficios = $beneficios->where('edad_minima', '>=', $request['edad_minima']);
         }
        
         else if($request->has('ventas_netas_minimas')){
-            $beneficios = $beneficios->where('ventas_netas_minimas','>=',$request['ventas_netas_minimas'])->get();
+            $beneficios = $beneficios->where('ventas_netas_minimas','>=',$request['ventas_netas_minimas']);
         }
         else if($request->has('ventas_netas_maximas')){
-            $beneficios = $beneficios->where('ventas_netas_maximas','<=',$request['ventas_netas_maximas'])->get();
+            $beneficios = $beneficios->where('ventas_netas_maximas','<=',$request['ventas_netas_maximas']);
         }
         else if($request->has('meses_antiguedad_inicio_actividades')){
-            $beneficios = $beneficios->where('meses_antiguedad_inicio_actividades','>=',$request['meses_antiguedad_inicio_actividades'])->get();
+            $beneficios = $beneficios->where('meses_antiguedad_inicio_actividades','>=',$request['meses_antiguedad_inicio_actividades']);
         }
 
         return response()->json($beneficios);
