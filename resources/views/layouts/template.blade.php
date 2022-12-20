@@ -98,6 +98,12 @@
     <script src="{{ URL::asset('js/tabs.js')}}"></script>
     <script src="{{ URL::asset('js/popup.js')}}"></script>
     <script src="{{ URL::asset('js/custom.js')}}"></script>
+    <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+<script>
+  var myLandbot = new Landbot.Popup({
+    configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1439082-CCJ0OJMRLW7U6LSM/index.json',
+  });
+</script>
 </body>
 
 </html>
