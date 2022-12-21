@@ -94,7 +94,7 @@
                             <label for="facebook">Facebook</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
                                     title="Link completo"></i></small>
-                            <input type="text" class="form-control" name="facebook" id="facebook"
+                            <input onChange="removeChar();" type="text" class="form-control" name="facebook" id="facebook"
                                 value="{{$usuario->facebook}}" placeholder="www.facebook.com/nombre-de-usuario">
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                             <label for="sitio_web">Pagina Web</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
                                     title="Link completo"></i></small>
-                            <input type="text" class="form-control" name="sitio_web" id="sitio_web"
+                            <input onChange="removeChar();" type="text" class="form-control" name="sitio_web" id="sitio_web"
                                 value="{{$usuario->sitio_web}}" placeholder="www.tusitio.cl">
                         </div>
                     </div>
@@ -180,9 +180,17 @@ $(document).ready(function() {
 function removeChar() {
     var a = $("#instagram").val();
     var e = $("#tiktok").val();
+    var link = $("#sitio_web").val();
+    var facebook = $("#facebook").val();
     a = a.replace('@', '');
     e = e.replace('@', '');
+    link = link.replace('http://','');
+    link = link.replace('https://','');
+    facebook = facebook.replace('http://','');
+    facebook = facebook.replace('https://','');
     $("#instagram").val(a);
     $("#tiktok").val(e);
+    $("#sitio_web").val(link);
+    $("#facebook").val(facebook);
 }
 </script>
