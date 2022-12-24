@@ -22,9 +22,12 @@ class AdminSoporteController extends Controller
 
     public function index()
     {
-        $users = User::all(); 
-        $preguntas = Pregunta::Where('estado',1)->get();
-        return view('administrador.lista-preguntas', compact('preguntas','users'));
+        $preguntas = Pregunta::all();
+        foreach($preguntas as $pregunta){
+            $user = User::findOrFail($pregunta->id_mype);
+            $pregunta->user = $user->name;
+        }
+        return view('administrador.lista-preguntas', compact('preguntas'));
         //
     }
 
@@ -69,9 +72,9 @@ class AdminSoporteController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::findOrFail($id);
-        $user = User::Where('id_mype',$mype->id )->get();
+        $user = User::findOrFail($pregunta->id_mype);
         
-        return view('administrador.ver-pregunta', compact('mypes'))->with(["pregunta" => $pregunta]);
+        return view('administrador.ver-pregunta')->with(["pregunta" => $pregunta, "user" => $user]);
         //
     }
 

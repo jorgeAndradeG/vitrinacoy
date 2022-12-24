@@ -20,7 +20,8 @@ class PreguntaController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('mypes.crear-pregunta');
+        $preguntas = Pregunta::where('id_mype',$user->id)->get();
+        return view('mypes.lista-preguntas',compact('preguntas'));
         //
     }
 
@@ -31,6 +32,7 @@ class PreguntaController extends Controller
      */
     public function create()
     {
+        return view('mypes.crear-pregunta');
         //
     }
 
@@ -52,7 +54,7 @@ class PreguntaController extends Controller
             "id_mype" => $user->id,
             "estado" => 1, 
         ]);
-        return redirect('/perfil'); 
+        return redirect('/pregunta'); 
         //
     }
 
@@ -64,6 +66,8 @@ class PreguntaController extends Controller
      */
     public function show($id)
     {
+        $pregunta = Pregunta::findOrFail($id);
+        return view('mypes.detail-pregunta')->with(["pregunta" => $pregunta]);
         //
     }
 

@@ -11,45 +11,39 @@
 
 @section('content')
 <div class="container-fluid">
-
-    <div class="form-floating mb-3" style="text-align:right;">
-
-    </div>
+    <h3 style="text-aling:center">Listado de Preguntas</h3>
     <br>
     <div class="table-responsive-sm">
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Número de pregunta</th>
                     <th scope="col">Nombre Usuario</th>
-                    <th scope="col">Correo Usuario</th>
                     <th scope="col">Estado</th>
-                    <th scope="col">Ver Problema</th>
+                    <th scope="col">Ver y responder consulta</th>
 
                 </tr>
             </thead>
             <tbody>
                 @foreach($preguntas as $pregunta)
-                @foreach($users as $user)
-                @if($user->id == $pregunta->id_mype)
+
                 <tr>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
+                    <td>{{$pregunta->id}}</td>
+                    <td>{{$pregunta->user}}</td>
                     @if($pregunta->estado == 1)
                     <td>
-                        <p style="color:green">Activo</p>
+                        <p style="color:red">En espera de respuesta</p>
                     </td>
                     @else
                     <td>
-                        <p style="color:red">Inactivo</p>
+                        <p style="color:green">Solucionada</p>
                     </td>
                     @endif
                     <td><a type="button" class="btn btn-success btn-sm"
                             href="{{action('App\Http\Controllers\AdminSoporteController@edit', $pregunta->id)}}"><i
                                 class="far fa-edit"></i></a></td>
                 </tr>
-                @break
-                @endif
-                @endforeach
+
                 @endforeach
             </tbody>
         </table>
