@@ -87,7 +87,7 @@
 
                 <div class="form-floating mb-3">
                     <label for="ventas_netas_maximas">Ventas netas máximas</label>
-                    <input type="number" class="form-control" name="ventas_netas_maximas" id="ventas_netas_maximas" value=" {{ $beneficio->ventas_netas_maximas }} ">
+                    <input type="number" class="form-control" name="ventas_netas_maximas" id="ventas_netas_maximas" value="{{ $beneficio->ventas_netas_maximas }}">
                 </div>
 
                 <div class="form-floating mb-3">
