@@ -17,7 +17,7 @@
                     <!-- <th scope="col">Correo</th> -->
                     <!-- <th scope="col">Rubro</th> -->
                     <th scope="col">Estado</th>
-                    <th scope="col">Estadisticas</th>
+                    <!-- <th scope="col">Estadisticas</th> -->
                     <th scope="col">Habilitar/Deshabilitar</th>
 
                 </tr>
@@ -38,8 +38,8 @@
                         <p style="color:red">Inactivo</p>
                     </td>
                     @endif
-                    <td><a type="button" class="btn btn-success btn-sm" href=""><i class="bi bi-bar-chart-line"></i></a>
-                    </td>
+                    <!-- <td><a type="button" class="btn btn-success btn-sm" href=""><i class="bi bi-bar-chart-line"></i></a>
+                    </td> -->
                     @if($user->estado == 1)
                     <td><a type="button" class="btn btn-danger btn-sm ventana" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" data-id='{{$user->id}}'><i class="far fa-trash-alt"></i></a>
