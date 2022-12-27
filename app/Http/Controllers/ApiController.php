@@ -17,7 +17,7 @@ class ApiController extends Controller
         $campos = ["tipo_persona_postulante","sexo_postulante","meses_antiguedad_inicio_actividades","participa_en_fosis"];
         $campos_comparables = ["edad_minima","ventas_netas_minimas","ventas_netas_maximas","meses_antiguedad_inicio_actividades"];
         // $beneficios = array();
-        $beneficios = Beneficio::all();
+        $beneficios = Beneficio::where('estado',1)->get();
         foreach($campos as $campo){
             if($request->has($campo)){
                 $beneficios = $beneficios->where($campo,$request[$campo]);
