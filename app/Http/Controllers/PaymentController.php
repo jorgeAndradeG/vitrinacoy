@@ -85,4 +85,9 @@ class PaymentController extends Controller
     {
         //
     }
+
+    public function loading_payment()
+    {
+        return view('payment.loading');
+    }
 }

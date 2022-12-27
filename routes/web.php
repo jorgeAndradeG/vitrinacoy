@@ -64,5 +64,6 @@ Route::resource('/beneficios', BeneficiosController::class)->middleware('auth.ba
 Route::post("/beneficios/deshabilitar", [BeneficiosController::class, 'deshabilitar'])->middleware('auth.basic');
 
 Route::resource('/payment', PaymentController::class);
+Route::get('/loading_payment', [PaymentController::class, 'loading_payment']);
 
 require __DIR__.'/auth.php';
