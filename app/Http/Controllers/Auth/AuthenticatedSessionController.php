@@ -37,7 +37,10 @@ class AuthenticatedSessionController extends Controller
             $user->estado = 1;
             $user->save();
         } elseif($user->estado == 2){
-            return redirect('/404');
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect('/');
         }
         if($user->es_admin == 0){
             return redirect('/perfil');
