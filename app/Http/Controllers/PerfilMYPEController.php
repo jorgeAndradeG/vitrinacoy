@@ -54,6 +54,9 @@ class PerfilMYPEController extends Controller
     public function show($id)
     {
         $mype = User::findOrFail($id);
+        if($mype->estado == 0){
+            return redirect('/404');
+         }
         $productos = Producto::Where('id_mype',$id,)->where('estado',1)->get();
         return view('vistas.perfil', compact('productos'))->with(['mype'=>$mype]);
     }

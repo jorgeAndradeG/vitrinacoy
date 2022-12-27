@@ -67,4 +67,8 @@ Route::post("/beneficios/deshabilitar", [BeneficiosController::class, 'deshabili
 Route::resource('/payment', PaymentController::class);
 Route::get('/loading_payment', [PaymentController::class, 'loading_payment']);
 
+Route::get('/404', function () {
+    abort(404);
+});
+
 require __DIR__.'/auth.php';
