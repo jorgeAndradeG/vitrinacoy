@@ -49,10 +49,10 @@
                             </div>
                             <ul>
                                 @foreach($categorias as $categoria)
-                                <li>
+                                <li> 
                                     <img src="assets/images/game-01.jpg" alt="" class="templatemo-item">
-                                    <h4>{{ $categoria->nombre }}</h4>
-                                    <h6>{{ $categoria->descripcion }}</h6>
+                                    <h4 style="color:#ec6090;"><b>{{ $categoria->nombre }}</b></h4>
+                                    <h6 style="color:white;">{{ $categoria->descripcion }}</h6> 
                                     <!-- <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
                                     <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span> -->
                                     <!-- <div class="download">

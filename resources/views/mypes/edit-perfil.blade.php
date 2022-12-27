@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                    <div class="form-floating mb-3">
+                        <div class="form-floating mb-3">
                             <label for="whatsapp_business">Whatsapp Business</label> <small><i
                                     class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="right"
                                     title="Numero completo sin '+'"></i></small>
@@ -94,8 +94,9 @@
                             <label for="facebook">Facebook</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
                                     title="Link completo"></i></small>
-                            <input onChange="removeChar();" type="text" class="form-control" name="facebook" id="facebook"
-                                value="{{$usuario->facebook}}" placeholder="www.facebook.com/nombre-de-usuario">
+                            <input onChange="removeChar();" type="text" class="form-control" name="facebook"
+                                id="facebook" value="{{$usuario->facebook}}"
+                                placeholder="www.facebook.com/nombre-de-usuario">
                         </div>
                     </div>
                 </div>
@@ -116,8 +117,8 @@
                             <label for="sitio_web">Pagina Web</label> <small><i class="fa-solid fa-circle-info"
                                     data-bs-toggle="tooltip" data-bs-placement="right"
                                     title="Link completo"></i></small>
-                            <input onChange="removeChar();" type="text" class="form-control" name="sitio_web" id="sitio_web"
-                                value="{{$usuario->sitio_web}}" placeholder="www.tusitio.cl">
+                            <input onChange="removeChar();" type="text" class="form-control" name="sitio_web"
+                                id="sitio_web" value="{{$usuario->sitio_web}}" placeholder="www.tusitio.cl">
                         </div>
                     </div>
                 </div>
@@ -125,7 +126,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        
+
 
                     </div>
                     <div class="col-md-6">
@@ -155,23 +156,64 @@
                         <button type="submit" class="btn btn-success" id="botonEditar">Actualizar Datos</button>
                     </div>
                 </div>
+                <br>
 
-                <div class="row">
-
-
-                </div>
 
 
 
             </form>
+            <div class="row">
 
+                <div class="col-md-6" style="text-align:center">
+                </div>
+                <div class="col-md-6" style="text-align:center">
+                    <button type="submit" class="btn btn-danger restore" id="deshabilitarButton" data-bs-toggle="modal-restore"
+                        data-bs-target="#restoreModal" data-id='{{$usuario->id}}'>Deshabilitar
+                        perfil</button>
+                </div>
+
+
+            </div>
         </div>
 
     </div>
 </div>
 @stop
 
+<div class="modal fade" id="restoreModal" tabindex="-1" aria-labelledby="restoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Deshabilitar cuenta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+            </div>
+
+            <form method="POST" action="{{action('App\Http\Controllers\PerfilController@deshabilitar')}}"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <p>¿Está seguro que desea deshabilitar su cuenta? Todos sus productos también se deshabilitarán y tendrá que activarlos 
+                        manualmente cuando vuelva a iniciar sesión.</p>
+                    <input type="hidden" name="userid" id="userid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Sí</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
 <script>
+$(document).on("click", ".restore", function() {
+    var Id = $(this).data('id');
+    $(".modal-body #userid").val(Id);
+    $('#restoreModal').modal('show');
+});
+
 $(document).ready(function() {
     $('[data-bs-toggle="tooltip"]').tooltip();
     removeChar();
@@ -184,10 +226,10 @@ function removeChar() {
     var facebook = $("#facebook").val();
     a = a.replace('@', '');
     e = e.replace('@', '');
-    link = link.replace('http://','');
-    link = link.replace('https://','');
-    facebook = facebook.replace('http://','');
-    facebook = facebook.replace('https://','');
+    link = link.replace('http://', '');
+    link = link.replace('https://', '');
+    facebook = facebook.replace('http://', '');
+    facebook = facebook.replace('https://', '');
     $("#instagram").val(a);
     $("#tiktok").val(e);
     $("#sitio_web").val(link);

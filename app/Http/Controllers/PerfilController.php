@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -142,6 +143,35 @@ class PerfilController extends Controller
      */
     public function destroy($id)
     {
-        //
+       //
+    }
+
+    public function deshabilitar(Request $request){
+
+        $user = User::findOrFail($request['userid']);
+
+        if($user->estado == 1){
+            $user->estado = 0;
+            $productos = Producto::Where('id_mype',$user->id)->get();
+            foreach($productos as $producto){
+                $producto->estado = 0;
+                $producto->save();
+            }
+        }else{
+            $user->estado = 1;
+            $productos = Producto::Where('id_mype',$user->id)->get();
+            foreach($productos as $producto){
+                $producto->estado = 1;
+                $producto->save();
+            }
+        }
+        $user->save();
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+        return redirect('/');
+
     }
 }

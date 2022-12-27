@@ -51,6 +51,7 @@ Route::resource('/pregunta', PreguntaController::class)->middleware(['auth.basic
 Route::resource('/listapreguntas', AdminSoporteController::class)->middleware('auth.basic');
 
 Route::resource('/perfil', PerfilController::class)->middleware(['auth.basic','verified']);
+Route::post('/perfil/deshabilitar', [PerfilController::class, 'deshabilitar'])->middleware(['auth.basic','verified']);
 
 Route::resource('/emprendimientos', EmprendimientosController::class);
 
