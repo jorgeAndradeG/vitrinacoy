@@ -65,7 +65,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Deshabilitar Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
 
             <form method="POST" action="{{action('App\Http\Controllers\AdminController@deshabilitar')}}"
@@ -76,7 +76,7 @@
                     <input type="hidden" name="modalid" id="modalid">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Deshabilitar</button>
                 </div>
             </form>
@@ -91,7 +91,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Habilitar Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
 
             <form method="POST" action="{{action('App\Http\Controllers\AdminController@deshabilitar')}}"
@@ -102,7 +102,7 @@
                     <input type="hidden" name="modalid" id="modalid">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Habilitar</button>
                 </div>
             </form>

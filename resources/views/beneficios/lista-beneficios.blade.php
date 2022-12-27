@@ -13,30 +13,31 @@
             class="btn btn-success">Agregar Beneficio</a>
     </div>
     <br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Habilitar/Deshabilitar</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($beneficios as $beneficio)
-            <tr>
-                <th>{{$beneficio->nombre}}</th>
-                @if($beneficio->estado == 1)
-                <td>
-                    <p style="color:green">Activo</p>
-                </td>
-                @else
-                <td>
-                    <p style="color:red">Inactivo</p>
-                </td>
-                @endif
-                <td><a href="{{action('App\Http\Controllers\BeneficiosController@edit', $beneficio->id)}}"
-                        type="button" class="btn btn-success btn-sm"> <i class="far fa-edit"></i></a></td>
+    <div class="table-responsive-sm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Habilitar/Deshabilitar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($beneficios as $beneficio)
+                <tr>
+                    <th>{{$beneficio->nombre}}</th>
+                    @if($beneficio->estado == 1)
+                    <td>
+                        <p style="color:green">Activo</p>
+                    </td>
+                    @else
+                    <td>
+                        <p style="color:red">Inactivo</p>
+                    </td>
+                    @endif
+                    <td><a href="{{action('App\Http\Controllers\BeneficiosController@edit', $beneficio->id)}}"
+                            type="button" class="btn btn-success btn-sm"> <i class="far fa-edit"></i></a></td>
                     @if($beneficio->estado == 1)
                     <td><a type="button" class="btn btn-danger btn-sm ventana" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" data-id='{{$beneficio->id}}'><i
@@ -47,12 +48,13 @@
                             data-bs-target="#restoreModal" data-id='{{$beneficio->id}}'><i
                                 class="fas fa-trash-restore"></i></a></td>
                     @endif
-            </tr>
+                </tr>
 
-            @endforeach
-        </tbody>
-    </table>
+                @endforeach
+            </tbody>
+        </table>
 
+    </div>
 </div>
 @stop
 
@@ -62,7 +64,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Deshabilitar Beneficio</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
 
             <form method="POST" action="{{action('App\Http\Controllers\BeneficiosController@deshabilitar')}}"
@@ -73,7 +75,7 @@
                     <input type="hidden" name="modalid" id="modalid">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Deshabilitar</button>
                 </div>
             </form>
@@ -88,7 +90,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Habilitar Beneficio</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
 
             <form method="POST" action="{{action('App\Http\Controllers\BeneficiosController@deshabilitar')}}"
@@ -99,7 +101,7 @@
                     <input type="hidden" name="modalid" id="modalid">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Habilitar</button>
                 </div>
             </form>
