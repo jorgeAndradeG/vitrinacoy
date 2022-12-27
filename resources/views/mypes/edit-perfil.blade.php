@@ -140,7 +140,7 @@
                         <div class="form-floating mb-3">
                             <label for="imagen">Imagen de Perfil</label><br>
                             @if(isset($usuario->foto))
-                            <img src="{{$usuario->foto}}" class="img-thumbnail" alt="..." width="200" height="100">
+                            <img src="/{{$usuario->foto}}" class="img-thumbnail" alt="..." width="200" height="100">
                             @else
                             <p style="text-align:center; color:red;">Sin Imagen de Perfil... Aún! Recuerda que sin
                                 imagen de

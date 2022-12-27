@@ -98,7 +98,7 @@ class PerfilController extends Controller
             {
                 //CUANDO NO ES IMAGEN
                 $user = Auth::user(); //OBTENEMOS AL USUARIO QUE ESTÁ LOGGEADO.
-                return view('mypes.edit-producto')->with(['msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)']); 
+                return view('mypes.edit-perfil')->with(['msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)', 'usuario' => $user]); 
             } else if(strtolower($formato) == "jpg" || strtolower($formato) == "jpeg" || strtolower($formato) == "png") 
             {
             
