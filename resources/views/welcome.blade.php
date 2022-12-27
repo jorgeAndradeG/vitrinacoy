@@ -84,8 +84,8 @@
                                     <!-- <div class="icon">
                                     <i class="fa-brands fa-instagram"></i>
                                     </div> -->
-                                    <h4>Contáctanos</h4>
-                                    <p>Escríbenos a nuestro <a href="http://www.instagram.com/vitrinacoy" target="_blank"><em>instagram</em></a> y te haremos llegar el
+                                    <h4 style="color:#ec6090;">Contáctanos</h4>
+                                    <p style="color:white;">Escríbenos a nuestro <a href="http://www.instagram.com/vitrinacoy" target="_blank"><em>instagram</em></a> y te haremos llegar el
                                         formulario de ingreso.</p>
                                 </div>
                             </div>
@@ -95,8 +95,8 @@
                                         <img src="assets/images/service-02.jpg" alt=""
                                             style="max-width: 20px; border-radius: 50%;">
                                     </div> -->
-                                    <h4>Formulario de ingreso</h4>
-                                    <p>Luego, completa los datos de tu emprendimiento y estarás listo.</p>
+                                    <h4 style="color:#ec6090;">Formulario de ingreso</h4>
+                                    <p style="color:white;">Luego, completa los datos de tu emprendimiento y estarás listo.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -105,8 +105,8 @@
                                         <img src="assets/images/service-03.jpg" alt=""
                                             style="max-width: 20px; border-radius: 50%;">
                                     </div> -->
-                                    <h4>Completamente gratis</h4>
-                                    <p>Para ser parte de Vitrina Coyhaique no es necesario efectuar ningún tipo pago.
+                                    <h4 style="color:#ec6090;">Completamente gratis</h4>
+                                    <p style="color:white;">Para ser parte de Vitrina Coyhaique no es necesario efectuar ningún tipo pago.
                                     </p>
                                 </div>
                             </div>
