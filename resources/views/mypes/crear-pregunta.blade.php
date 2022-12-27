@@ -42,7 +42,7 @@
                     <p style="text-align:center;">Ingresa tu problema y te ayudaremos lo más pronto posible.</p>
                     <label for="pregunta">Problema:</label>
 
-                    <textarea name="pregunta" id="pregunta" cols="30" rows="5" class="form-control"></textarea>
+                    <textarea name="pregunta" id="pregunta" cols="30" rows="5" class="form-control" required></textarea>
                 </div>
             </div>
 
