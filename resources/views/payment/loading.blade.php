@@ -1,8 +1,8 @@
 @extends('layouts.template')
 @section('main')
 <div class="loading" id="loading" style="display:none">Loading&#8230;</div>
-<div class="container py-5">
-
+<div class="container">
+    <img src="{{ URL::asset('images/graciasporsucompra3.png') }}" alt="" width="100%">
 </div>
 @stop
 
