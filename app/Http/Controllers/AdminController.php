@@ -99,7 +99,7 @@ class AdminController extends Controller
     {
         $user = User::findOrFail($request ['modalid']);
         if($user->estado == 1){
-            $user->estado = 0;
+            $user->estado = 2;
             $productos = Producto::Where('id_mype',$user->id)->get();
             foreach($productos as $producto){
                 $producto->estado = 0;
@@ -108,10 +108,10 @@ class AdminController extends Controller
         }else{
             $user->estado = 1;
             $productos = Producto::Where('id_mype',$user->id)->get();
-            foreach($productos as $producto){
-                $producto->estado = 1;
-                $producto->save();
-            }
+            // foreach($productos as $producto){
+            //     $producto->estado = 1;
+            //     $producto->save();
+            // }
         }
         $user->save();
         return redirect('/mypes');
